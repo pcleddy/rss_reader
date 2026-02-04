@@ -1,46 +1,113 @@
 <!DOCTYPE html>
-<!-- RSS Reader v0.2.0 -->
+<!-- RSS Reader v0.4.0 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader v0.2.0</title>
+    <title>RSS Reader v0.4.0</title>
     <style>
+        :root {
+            --bg-primary: #f5f5f5;
+            --bg-card: #fff;
+            --bg-hover: #f0f0f0;
+            --bg-header: #f8f9fa;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --text-muted: #888;
+            --text-desc: #555;
+            --border-color: #ddd;
+            --border-light: #eee;
+            --link-color: #0066cc;
+            --link-read: #666;
+            --tag-bg: #e8f4ff;
+            --suggestion-bg: #f0f7ff;
+            --suggestion-border: #d0e3f7;
+            --added-bg: #e8f5e9;
+            --added-border: #a5d6a7;
+            --status-loading: #fff3cd;
+            --status-error-bg: #f8d7da;
+            --status-error-text: #721c24;
+            --status-success-bg: #d4edda;
+            --status-success-text: #155724;
+        }
+        [data-theme="dark"] {
+            --bg-primary: #1a1a2e;
+            --bg-card: #16213e;
+            --bg-hover: #1f2b47;
+            --bg-header: #1f2b47;
+            --text-primary: #e8e8e8;
+            --text-secondary: #b0b0b0;
+            --text-muted: #888;
+            --text-desc: #a0a0a0;
+            --border-color: #2a3a5a;
+            --border-light: #253550;
+            --link-color: #6db3f2;
+            --link-read: #888;
+            --tag-bg: #1e3a5f;
+            --suggestion-bg: #1e3a5f;
+            --suggestion-border: #2a4a6f;
+            --added-bg: #1e4030;
+            --added-border: #2a5040;
+            --status-loading: #3d3510;
+            --status-error-bg: #4a1a1a;
+            --status-error-text: #f5a0a0;
+            --status-success-bg: #1a3a1a;
+            --status-success-text: #a0f0a0;
+        }
         * { box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background: #f5f5f5;
-            color: #333;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background 0.3s, color 0.3s;
         }
         h1 { margin-bottom: 10px; }
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .theme-toggle {
+            padding: 6px 12px;
+            font-size: 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .theme-toggle:hover { background: var(--bg-hover); }
         .controls {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
             margin-bottom: 20px;
             padding: 15px;
-            background: #fff;
+            background: var(--bg-card);
             border-radius: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--border-color);
         }
         button {
             padding: 8px 16px;
-            border: 1px solid #ccc;
-            background: #fff;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-primary);
             border-radius: 4px;
             cursor: pointer;
             font-size: 14px;
         }
-        button:hover { background: #f0f0f0; }
+        button:hover { background: var(--bg-hover); }
         button.primary { background: #0066cc; color: #fff; border-color: #0066cc; }
         button.primary:hover { background: #0055aa; }
         button.small { padding: 4px 10px; font-size: 12px; }
         input[type="text"], input[type="url"] {
             padding: 8px 12px;
-            border: 1px solid #ccc;
+            border: 1px solid var(--border-color);
+            background: var(--bg-card);
+            color: var(--text-primary);
             border-radius: 4px;
             font-size: 14px;
             flex: 1;
@@ -49,9 +116,9 @@
         .feeds-list {
             margin-bottom: 20px;
             padding: 15px;
-            background: #fff;
+            background: var(--bg-card);
             border-radius: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--border-color);
         }
         .feeds-list h2 { margin-top: 0; font-size: 16px; }
         .feed-tag {
@@ -59,10 +126,17 @@
             align-items: center;
             gap: 8px;
             padding: 5px 10px;
-            background: #e8f4ff;
+            background: var(--tag-bg);
             border-radius: 4px;
             margin: 3px;
             font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .feed-tag:hover { opacity: 0.8; }
+        .feed-tag.active {
+            background: var(--link-color);
+            color: #fff;
         }
         .feed-tag button {
             padding: 2px 6px;
@@ -71,14 +145,31 @@
             color: #fff;
             border: none;
         }
+        .filter-all {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 10px;
+            background: var(--bg-hover);
+            border-radius: 4px;
+            margin: 3px;
+            font-size: 13px;
+            cursor: pointer;
+            border: 1px dashed var(--border-color);
+        }
+        .filter-all:hover { background: var(--bg-header); }
+        .filter-all.active {
+            background: var(--link-color);
+            color: #fff;
+            border-style: solid;
+        }
         .items-container {
-            background: #fff;
+            background: var(--bg-card);
             border-radius: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--border-color);
         }
         .item {
             padding: 15px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-light);
         }
         .item:last-child { border-bottom: none; }
         .item.read { opacity: 0.6; }
@@ -90,20 +181,20 @@
         }
         .item-title {
             font-weight: 600;
-            color: #0066cc;
+            color: var(--link-color);
             text-decoration: none;
             font-size: 15px;
         }
         .item-title:hover { text-decoration: underline; }
-        .item.read .item-title { color: #666; }
+        .item.read .item-title { color: var(--link-read); }
         .item-meta {
             font-size: 12px;
-            color: #888;
+            color: var(--text-muted);
             margin-top: 5px;
         }
         .item-desc {
             font-size: 14px;
-            color: #555;
+            color: var(--text-desc);
             margin-top: 8px;
             line-height: 1.5;
         }
@@ -118,13 +209,13 @@
             border-radius: 4px;
             font-size: 14px;
         }
-        .status.loading { background: #fff3cd; }
-        .status.error { background: #f8d7da; color: #721c24; }
-        .status.success { background: #d4edda; color: #155724; }
+        .status.loading { background: var(--status-loading); }
+        .status.error { background: var(--status-error-bg); color: var(--status-error-text); }
+        .status.success { background: var(--status-success-bg); color: var(--status-success-text); }
         .hidden { display: none; }
         .stats {
             font-size: 13px;
-            color: #666;
+            color: var(--text-secondary);
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
@@ -141,15 +232,15 @@
         /* Suggestions sidebar */
         .suggestions-panel {
             margin-bottom: 20px;
-            background: #fff;
+            background: var(--bg-card);
             border-radius: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--border-color);
             overflow: hidden;
         }
         .suggestions-header {
             padding: 12px 15px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #ddd;
+            background: var(--bg-header);
+            border-bottom: 1px solid var(--border-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -160,7 +251,7 @@
             font-size: 14px;
             font-weight: 600;
         }
-        .suggestions-header:hover { background: #f0f1f2; }
+        .suggestions-header:hover { background: var(--bg-hover); }
         .suggestions-content {
             max-height: 0;
             overflow: hidden;
@@ -172,12 +263,12 @@
         }
         .suggestions-category {
             padding: 10px 15px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-light);
         }
         .suggestions-category:last-child { border-bottom: none; }
         .suggestions-category h3 {
             font-size: 12px;
-            color: #666;
+            color: var(--text-secondary);
             margin: 0 0 8px 0;
             text-transform: uppercase;
         }
@@ -187,26 +278,41 @@
             gap: 6px;
             padding: 4px 10px;
             margin: 2px;
-            background: #f0f7ff;
-            border: 1px solid #d0e3f7;
+            background: var(--suggestion-bg);
+            border: 1px solid var(--suggestion-border);
             border-radius: 4px;
             font-size: 12px;
             cursor: pointer;
         }
         .suggestion-item:hover {
-            background: #e0efff;
-            border-color: #0066cc;
+            background: var(--bg-hover);
+            border-color: var(--link-color);
         }
         .suggestion-item.added {
-            background: #e8f5e9;
-            border-color: #a5d6a7;
+            background: var(--added-bg);
+            border-color: var(--added-border);
             opacity: 0.7;
         }
+        .subtitle { color: var(--text-secondary); margin-bottom: 20px; }
     </style>
+    <script>
+        // Prevent flash of wrong theme
+        (function() {
+            const saved = localStorage.getItem('rssReaderTheme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 <body>
-    <h1>📰 RSS Reader</h1>
-    <p style="color: #666; margin-bottom: 20px;">Import your state file to continue where you left off, or add feeds to get started.</p>
+    <div class="header-row">
+        <h1>📰 RSS Reader</h1>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌓</button>
+    </div>
+    <p class="subtitle">Import your state file to continue where you left off, or add feeds to get started.</p>
 
     <div class="controls">
         <input type="url" id="feedUrl" placeholder="Enter RSS feed URL...">
@@ -257,6 +363,7 @@
         };
 
         let allItems = []; // Current session's fetched items
+        let activeFilter = null; // null = show all, or feed URL to filter
 
         const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 
@@ -362,8 +469,37 @@
             ],
         };
 
+        // Theme handling
+        function initTheme() {
+            const saved = localStorage.getItem('rssReaderTheme');
+            if (saved) {
+                document.documentElement.setAttribute('data-theme', saved);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            updateThemeIcon();
+        }
+
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('rssReaderTheme', next);
+            updateThemeIcon();
+        }
+
+        function updateThemeIcon() {
+            const btn = document.querySelector('.theme-toggle');
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            btn.textContent = isDark ? '☀️' : '🌙';
+            btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+        }
+
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
+            // Init theme first (before any flicker)
+            initTheme();
+
             // Try to load from localStorage as backup
             const saved = localStorage.getItem('rssReaderState');
             if (saved) {
@@ -467,12 +603,20 @@
                 container.innerHTML = 'No feeds yet. Add one above or import a state file.';
                 return;
             }
-            container.innerHTML = state.feeds.map(f => `
-                <span class="feed-tag">
+            const allBtn = `<span class="filter-all ${activeFilter === null ? 'active' : ''}" onclick="filterByFeed(null)">All</span>`;
+            const tags = state.feeds.map(f => `
+                <span class="feed-tag ${activeFilter === f.url ? 'active' : ''}" onclick="filterByFeed('${escapeHtml(f.url)}')">
                     ${escapeHtml(f.title || f.url)}
-                    <button onclick="removeFeed('${escapeHtml(f.url)}')">&times;</button>
+                    <button onclick="event.stopPropagation(); removeFeed('${escapeHtml(f.url)}')">&times;</button>
                 </span>
             `).join('');
+            container.innerHTML = allBtn + tags;
+        }
+
+        function filterByFeed(url) {
+            activeFilter = activeFilter === url ? null : url; // toggle if same
+            renderFeeds();
+            renderItems();
         }
 
         // Fetching
@@ -591,11 +735,16 @@
         function renderItems() {
             const container = document.getElementById('itemsContainer');
             const showRead = document.getElementById('showReadToggle').checked;
-            const unreadCount = allItems.filter(i => !i.read).length;
-            const displayItems = showRead ? allItems : allItems.filter(i => !i.read);
+
+            // Apply filters: feed filter, then read filter
+            let filtered = activeFilter ? allItems.filter(i => i.feedUrl === activeFilter) : allItems;
+            const displayItems = showRead ? filtered : filtered.filter(i => !i.read);
+
+            const unreadCount = filtered.filter(i => !i.read).length;
+            const filterLabel = activeFilter ? state.feeds.find(f => f.url === activeFilter)?.title || 'filtered' : 'all feeds';
 
             document.getElementById('statsText').textContent =
-                `${allItems.length} items total, ${unreadCount} unread`;
+                `${filtered.length} items from ${filterLabel}, ${unreadCount} unread`;
 
             if (displayItems.length === 0) {
                 if (allItems.length === 0) {
