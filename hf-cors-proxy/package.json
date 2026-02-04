@@ -1,0 +1,12 @@
+{
+  "name": "rss-cors-proxy",
+  "version": "1.0.0",
+  "description": "Simple CORS proxy for RSS feeds",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

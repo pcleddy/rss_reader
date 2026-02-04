@@ -11,10 +11,10 @@ const http = require('http');
 
 // CORS proxies to test
 const PROXIES = [
+    { name: 'masterp99-hf', format: url => `https://masterp99-rss-proxy.hf.space/proxy?url=${encodeURIComponent(url)}` },
     { name: 'corsproxy.io', format: url => `https://corsproxy.io/?${encodeURIComponent(url)}` },
     { name: 'allorigins.win', format: url => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}` },
     { name: 'thingproxy', format: url => `https://thingproxy.freeboard.io/fetch/${url}` },
-    { name: 'cors.sh', format: url => `https://cors.sh/${url}` },
 ];
 
 // All feeds from the RSS reader
@@ -132,8 +132,8 @@ const FEEDS = [
     { name: "Cup of Jo", url: "https://cupofjo.com/feed/" },
 ];
 
-const TIMEOUT = 15000; // 15 second timeout
-const DELAY_BETWEEN = 500; // 500ms between tests (nice and slow)
+const TIMEOUT = 10000; // 10 second timeout
+const DELAY_BETWEEN = 100; // 100ms between tests (faster!)
 
 function fetch(url, timeout = TIMEOUT) {
     return new Promise((resolve, reject) => {
@@ -203,9 +203,12 @@ async function testFeedWithProxy(feed, proxy) {
 }
 
 async function main() {
-    console.log('🔫 CORS Proxy Machine Gun Test');
-    console.log(`Testing ${FEEDS.length} feeds × ${PROXIES.length} proxies = ${FEEDS.length * PROXIES.length} requests`);
-    console.log(`Going nice and slow... ${DELAY_BETWEEN}ms between each\n`);
+    console.log('');
+    console.log('  ╔══════════════════════════════════════════════════════════╗');
+    console.log('  ║  🔫 CORS PROXY BATTLE ROYALE 🔫                          ║');
+    console.log('  ║  Who will be the last proxy standing?                    ║');
+    console.log('  ╚══════════════════════════════════════════════════════════╝');
+    console.log(`\n  ${FEEDS.length} feeds × ${PROXIES.length} proxies = ${FEEDS.length * PROXIES.length} battles!\n`);
 
     const results = {
         timestamp: new Date().toISOString(),
@@ -215,22 +218,91 @@ async function main() {
         details: []
     };
 
-    // Initialize counters
+    // Initialize counters with gamification
+    const scores = {};
+    const wins = {};   // Speed wins (fastest successful)
+    const saves = {};  // Only proxy to succeed
     for (const proxy of PROXIES) {
         results.byProxy[proxy.name] = { success: 0, failed: 0, avgTime: 0, times: [] };
+        scores[proxy.name] = 0;
+        wins[proxy.name] = 0;
+        saves[proxy.name] = 0;
     }
 
-    let testNum = 0;
-    const totalTests = FEEDS.length * PROXIES.length;
+    const taunts = [
+        "is on fire! 🔥",
+        "can't be stopped! 💪",
+        "is dominating! 👑",
+        "takes the lead! 🏃",
+        "pulls ahead! 🚀",
+    ];
+    const fails = [
+        "totally wiped out! 💀",
+        "got rekt! 😵",
+        "choked! 🤢",
+        "went dark! 🌑",
+    ];
+
+    let feedNum = 0;
+    let lastLeader = null;
+    let leaderStreak = 0;
+
+    const printLeaderboard = () => {
+        const sorted = Object.entries(scores).sort((a,b) => b[1] - a[1]);
+        console.log('\n  ┌─────────────────────────────────────────┐');
+        console.log('  │  📊 LIVE LEADERBOARD                    │');
+        console.log('  ├─────────────────────────────────────────┤');
+        sorted.forEach(([name, score], i) => {
+            const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : '  ';
+            const bar = '█'.repeat(Math.min(20, Math.floor(score / 3)));
+            const w = wins[name];
+            const s = saves[name];
+            console.log(`  │ ${medal} ${name.padEnd(15)} ${String(score).padStart(3)} pts │ W:${w} S:${s}`);
+        });
+        console.log('  └─────────────────────────────────────────┘\n');
+    };
 
     for (const feed of FEEDS) {
+        feedNum++;
+        console.log(`  ⚔️  [${feedNum}/${FEEDS.length}] ${feed.name}`);
+
         results.byFeed[feed.name] = {};
 
-        for (const proxy of PROXIES) {
-            testNum++;
-            process.stdout.write(`\r[${testNum}/${totalTests}] Testing ${feed.name} via ${proxy.name}...`.padEnd(80));
+        // Race proxies - first success wins, bail immediately!
+        const proxyResults = [];
+        let successCount = 0;
+        const MIN_SUCCESSES = 1;
 
-            const result = await testFeedWithProxy(feed, proxy);
+        await new Promise(resolve => {
+            let completed = 0;
+            PROXIES.forEach((proxy, i) => {
+                testFeedWithProxy(feed, proxy).then(result => {
+                    proxyResults[i] = result;
+                    completed++;
+                    if (result.success) successCount++;
+
+                    // Bail early if we have enough successes OR all done
+                    if (successCount >= MIN_SUCCESSES || completed === PROXIES.length) {
+                        // Fill remaining with "skipped"
+                        PROXIES.forEach((p, j) => {
+                            if (!proxyResults[j]) {
+                                proxyResults[j] = { success: false, elapsed: 0, error: 'SKIPPED', status: null };
+                            }
+                        });
+                        resolve();
+                    }
+                });
+            });
+        });
+
+        // Find winner (fastest success)
+        let fastestTime = Infinity;
+        let fastestProxy = null;
+        successCount = 0; // Reset for accurate count
+
+        // Process results
+        PROXIES.forEach((proxy, i) => {
+            const result = proxyResults[i];
 
             results.details.push({
                 feed: feed.name,
@@ -244,14 +316,57 @@ async function main() {
             if (result.success) {
                 results.byProxy[proxy.name].success++;
                 results.byProxy[proxy.name].times.push(result.elapsed);
+                scores[proxy.name] += 10; // Points for success
+                successCount++;
+                if (result.elapsed < fastestTime) {
+                    fastestTime = result.elapsed;
+                    fastestProxy = proxy.name;
+                }
             } else {
                 results.byProxy[proxy.name].failed++;
             }
+        });
 
-            // Nice and slow
-            await sleep(DELAY_BETWEEN);
+        // Award bonuses
+        if (fastestProxy) {
+            scores[fastestProxy] += 5; // Speed bonus
+            wins[fastestProxy]++;
+            console.log(`      🏆 ${fastestProxy} WINS! (${fastestTime}ms)`);
+
+            if (successCount === 1) {
+                scores[fastestProxy] += 10; // Clutch save bonus!
+                saves[fastestProxy]++;
+                console.log(`      🦸 CLUTCH SAVE! Only proxy to succeed!`);
+            }
+
+            // Streak tracking
+            if (fastestProxy === lastLeader) {
+                leaderStreak++;
+                if (leaderStreak >= 3) {
+                    console.log(`      🔥 ${leaderStreak}-WIN STREAK! ${taunts[Math.floor(Math.random() * taunts.length)]}`);
+                }
+            } else {
+                if (leaderStreak >= 3) {
+                    console.log(`      💔 ${lastLeader}'s streak BROKEN!`);
+                }
+                leaderStreak = 1;
+                lastLeader = fastestProxy;
+            }
+        } else {
+            console.log(`      💀 ALL PROXIES FAILED! ${fails[Math.floor(Math.random() * fails.length)]}`);
         }
+
+        // Show leaderboard every 10 feeds
+        if (feedNum % 10 === 0) {
+            printLeaderboard();
+        }
+
+        // Small delay between feeds
+        await sleep(DELAY_BETWEEN);
     }
+
+    // Final leaderboard
+    printLeaderboard();
 
     // Calculate averages and summary
     console.log('\n\n📊 RESULTS:\n');

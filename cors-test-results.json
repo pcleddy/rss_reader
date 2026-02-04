@@ -1,0 +1,4286 @@
+{
+  "timestamp": "2026-02-04T04:08:38.266Z",
+  "summary": {
+    "ranking": [
+      "masterp99-hf",
+      "allorigins.win",
+      "corsproxy.io",
+      "thingproxy"
+    ],
+    "winner": "masterp99-hf",
+    "winnerPct": 96,
+    "universalFeeds": 0,
+    "problemFeeds": [
+      "Discord Blog",
+      "Webdesigner Depot"
+    ]
+  },
+  "byProxy": {
+    "masterp99-hf": {
+      "success": 97,
+      "failed": 4,
+      "avgTime": 539
+    },
+    "corsproxy.io": {
+      "success": 0,
+      "failed": 101,
+      "avgTime": 0
+    },
+    "allorigins.win": {
+      "success": 2,
+      "failed": 99,
+      "avgTime": 8043
+    },
+    "thingproxy": {
+      "success": 0,
+      "failed": 101,
+      "avgTime": 0
+    }
+  },
+  "byFeed": {
+    "Hacker News": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Ars Technica": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Verge": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "TechCrunch": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Wired": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "MIT Tech Review": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Engadget": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "TechMeme": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Register": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Hacker Noon": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Product Hunt": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "InfoQ": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "DeepMind": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Hugging Face Blog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "ML Mastery": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "MIT AI News": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Gradient": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "AI Weirdness": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Simon Willison": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Coding Horror": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "CSS-Tricks": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Smashing Magazine": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "A List Apart": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Dev.to": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Lobsters": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Pragmatic Engineer": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Martin Fowler": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Dan Abramov": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Julia Evans": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Daring Fireball": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Go Blog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Rust Blog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Python Insider": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "GitHub Blog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Cloudflare Blog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Vercel Blog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Fly.io Blog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Stripe Blog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Dropbox Tech": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Slack Engineering": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Discord Blog": {
+      "masterp99-hf": false,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Nature": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Science Daily": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "New Scientist": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Phys.org": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Ars Science": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Live Science": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "ScienceAlert": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Smithsonian": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "NPR": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "BBC": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Guardian": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Al Jazeera": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Atlantic": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Vox": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Intercept": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "ProPublica": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Axios": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Rest of World": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Bloomberg": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Y Combinator": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Stratechery": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Benedict Evans": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Lenny's Newsletter": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "UX Collective": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "NN Group": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Sidebar": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Codrops": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Dribbble Blog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Webdesigner Depot": {
+      "masterp99-hf": false,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Krebs on Security": {
+      "masterp99-hf": false,
+      "corsproxy.io": false,
+      "allorigins.win": true,
+      "thingproxy": false
+    },
+    "Schneier on Security": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Hacker News": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Dark Reading": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Troy Hunt": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Google Project Zero": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "SANS ISC": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Graham Cluley": {
+      "masterp99-hf": false,
+      "corsproxy.io": false,
+      "allorigins.win": true,
+      "thingproxy": false
+    },
+    "Lex Fridman": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Changelog": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Software Engineering Daily": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Talk Python": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Acquired": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Vergecast": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Darknet Diaries": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Wait But Why": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Brain Pickings": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Kottke": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Austin Kleon": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Seth Godin": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Longform": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Farnam Street": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "XKCD": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Aeon": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Nautilus": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Pudding": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Literary Hub": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Open Culture": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Boing Boing": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "The Morning News": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    },
+    "Cup of Jo": {
+      "masterp99-hf": true,
+      "corsproxy.io": false,
+      "allorigins.win": false,
+      "thingproxy": false
+    }
+  },
+  "details": [
+    {
+      "feed": "Hacker News",
+      "feedUrl": "https://hnrss.org/frontpage",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 415,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Hacker News",
+      "feedUrl": "https://hnrss.org/frontpage",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 110,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Hacker News",
+      "feedUrl": "https://hnrss.org/frontpage",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Hacker News",
+      "feedUrl": "https://hnrss.org/frontpage",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 8,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Ars Technica",
+      "feedUrl": "https://feeds.arstechnica.com/arstechnica/index",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 172,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Ars Technica",
+      "feedUrl": "https://feeds.arstechnica.com/arstechnica/index",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 115,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Ars Technica",
+      "feedUrl": "https://feeds.arstechnica.com/arstechnica/index",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Ars Technica",
+      "feedUrl": "https://feeds.arstechnica.com/arstechnica/index",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 13,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Verge",
+      "feedUrl": "https://www.theverge.com/rss/index.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 107,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Verge",
+      "feedUrl": "https://www.theverge.com/rss/index.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Verge",
+      "feedUrl": "https://www.theverge.com/rss/index.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Verge",
+      "feedUrl": "https://www.theverge.com/rss/index.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 16,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "TechCrunch",
+      "feedUrl": "https://techcrunch.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 103,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "TechCrunch",
+      "feedUrl": "https://techcrunch.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "TechCrunch",
+      "feedUrl": "https://techcrunch.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "TechCrunch",
+      "feedUrl": "https://techcrunch.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 12,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Wired",
+      "feedUrl": "https://www.wired.com/feed/rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 111,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Wired",
+      "feedUrl": "https://www.wired.com/feed/rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Wired",
+      "feedUrl": "https://www.wired.com/feed/rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Wired",
+      "feedUrl": "https://www.wired.com/feed/rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 8,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "MIT Tech Review",
+      "feedUrl": "https://www.technologyreview.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 170,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "MIT Tech Review",
+      "feedUrl": "https://www.technologyreview.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 120,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "MIT Tech Review",
+      "feedUrl": "https://www.technologyreview.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "MIT Tech Review",
+      "feedUrl": "https://www.technologyreview.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 13,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Engadget",
+      "feedUrl": "https://www.engadget.com/rss.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 825,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Engadget",
+      "feedUrl": "https://www.engadget.com/rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 119,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Engadget",
+      "feedUrl": "https://www.engadget.com/rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Engadget",
+      "feedUrl": "https://www.engadget.com/rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "TechMeme",
+      "feedUrl": "https://www.techmeme.com/feed.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 369,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "TechMeme",
+      "feedUrl": "https://www.techmeme.com/feed.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 173,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "TechMeme",
+      "feedUrl": "https://www.techmeme.com/feed.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "TechMeme",
+      "feedUrl": "https://www.techmeme.com/feed.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 13,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Register",
+      "feedUrl": "https://www.theregister.com/headlines.atom",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 110,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Register",
+      "feedUrl": "https://www.theregister.com/headlines.atom",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Register",
+      "feedUrl": "https://www.theregister.com/headlines.atom",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Register",
+      "feedUrl": "https://www.theregister.com/headlines.atom",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 19,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Hacker Noon",
+      "feedUrl": "https://hackernoon.com/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 195,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Hacker Noon",
+      "feedUrl": "https://hackernoon.com/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Hacker Noon",
+      "feedUrl": "https://hackernoon.com/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Hacker Noon",
+      "feedUrl": "https://hackernoon.com/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 18,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Product Hunt",
+      "feedUrl": "https://www.producthunt.com/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 147,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Product Hunt",
+      "feedUrl": "https://www.producthunt.com/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Product Hunt",
+      "feedUrl": "https://www.producthunt.com/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Product Hunt",
+      "feedUrl": "https://www.producthunt.com/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 20,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "InfoQ",
+      "feedUrl": "https://feed.infoq.com/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 440,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "InfoQ",
+      "feedUrl": "https://feed.infoq.com/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 431,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "InfoQ",
+      "feedUrl": "https://feed.infoq.com/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "InfoQ",
+      "feedUrl": "https://feed.infoq.com/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 15,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "DeepMind",
+      "feedUrl": "https://deepmind.google/blog/rss.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 424,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "DeepMind",
+      "feedUrl": "https://deepmind.google/blog/rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 420,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "DeepMind",
+      "feedUrl": "https://deepmind.google/blog/rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "DeepMind",
+      "feedUrl": "https://deepmind.google/blog/rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Hugging Face Blog",
+      "feedUrl": "https://huggingface.co/blog/feed.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1826,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Hugging Face Blog",
+      "feedUrl": "https://huggingface.co/blog/feed.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 467,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Hugging Face Blog",
+      "feedUrl": "https://huggingface.co/blog/feed.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Hugging Face Blog",
+      "feedUrl": "https://huggingface.co/blog/feed.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 16,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "ML Mastery",
+      "feedUrl": "https://machinelearningmastery.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 107,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "ML Mastery",
+      "feedUrl": "https://machinelearningmastery.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "ML Mastery",
+      "feedUrl": "https://machinelearningmastery.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "ML Mastery",
+      "feedUrl": "https://machinelearningmastery.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 16,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "MIT AI News",
+      "feedUrl": "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 236,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "MIT AI News",
+      "feedUrl": "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 114,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "MIT AI News",
+      "feedUrl": "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "MIT AI News",
+      "feedUrl": "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Gradient",
+      "feedUrl": "https://thegradient.pub/rss/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1813,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Gradient",
+      "feedUrl": "https://thegradient.pub/rss/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 138,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "The Gradient",
+      "feedUrl": "https://thegradient.pub/rss/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Gradient",
+      "feedUrl": "https://thegradient.pub/rss/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 22,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "AI Weirdness",
+      "feedUrl": "https://www.aiweirdness.com/rss/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 112,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "AI Weirdness",
+      "feedUrl": "https://www.aiweirdness.com/rss/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "AI Weirdness",
+      "feedUrl": "https://www.aiweirdness.com/rss/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "AI Weirdness",
+      "feedUrl": "https://www.aiweirdness.com/rss/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 25,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Simon Willison",
+      "feedUrl": "https://simonwillison.net/atom/everything/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 118,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Simon Willison",
+      "feedUrl": "https://simonwillison.net/atom/everything/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Simon Willison",
+      "feedUrl": "https://simonwillison.net/atom/everything/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Simon Willison",
+      "feedUrl": "https://simonwillison.net/atom/everything/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 19,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Coding Horror",
+      "feedUrl": "https://blog.codinghorror.com/rss/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 130,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Coding Horror",
+      "feedUrl": "https://blog.codinghorror.com/rss/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 95,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Coding Horror",
+      "feedUrl": "https://blog.codinghorror.com/rss/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Coding Horror",
+      "feedUrl": "https://blog.codinghorror.com/rss/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 4,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "CSS-Tricks",
+      "feedUrl": "https://css-tricks.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1222,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "CSS-Tricks",
+      "feedUrl": "https://css-tricks.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 99,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "CSS-Tricks",
+      "feedUrl": "https://css-tricks.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "CSS-Tricks",
+      "feedUrl": "https://css-tricks.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 7,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Smashing Magazine",
+      "feedUrl": "https://www.smashingmagazine.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 427,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Smashing Magazine",
+      "feedUrl": "https://www.smashingmagazine.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 114,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Smashing Magazine",
+      "feedUrl": "https://www.smashingmagazine.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Smashing Magazine",
+      "feedUrl": "https://www.smashingmagazine.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "A List Apart",
+      "feedUrl": "https://alistapart.com/main/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 192,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "A List Apart",
+      "feedUrl": "https://alistapart.com/main/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 123,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "A List Apart",
+      "feedUrl": "https://alistapart.com/main/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "A List Apart",
+      "feedUrl": "https://alistapart.com/main/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 21,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Dev.to",
+      "feedUrl": "https://dev.to/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 140,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Dev.to",
+      "feedUrl": "https://dev.to/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Dev.to",
+      "feedUrl": "https://dev.to/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Dev.to",
+      "feedUrl": "https://dev.to/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 21,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Lobsters",
+      "feedUrl": "https://lobste.rs/rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 263,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Lobsters",
+      "feedUrl": "https://lobste.rs/rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 119,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Lobsters",
+      "feedUrl": "https://lobste.rs/rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Lobsters",
+      "feedUrl": "https://lobste.rs/rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 15,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Pragmatic Engineer",
+      "feedUrl": "https://newsletter.pragmaticengineer.com/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 372,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Pragmatic Engineer",
+      "feedUrl": "https://newsletter.pragmaticengineer.com/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 125,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "The Pragmatic Engineer",
+      "feedUrl": "https://newsletter.pragmaticengineer.com/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Pragmatic Engineer",
+      "feedUrl": "https://newsletter.pragmaticengineer.com/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Martin Fowler",
+      "feedUrl": "https://martinfowler.com/feed.atom",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 110,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Martin Fowler",
+      "feedUrl": "https://martinfowler.com/feed.atom",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Martin Fowler",
+      "feedUrl": "https://martinfowler.com/feed.atom",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Martin Fowler",
+      "feedUrl": "https://martinfowler.com/feed.atom",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Dan Abramov",
+      "feedUrl": "https://overreacted.io/rss.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 170,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Dan Abramov",
+      "feedUrl": "https://overreacted.io/rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 148,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Dan Abramov",
+      "feedUrl": "https://overreacted.io/rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Dan Abramov",
+      "feedUrl": "https://overreacted.io/rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 22,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Julia Evans",
+      "feedUrl": "https://jvns.ca/atom.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 574,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Julia Evans",
+      "feedUrl": "https://jvns.ca/atom.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 174,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Julia Evans",
+      "feedUrl": "https://jvns.ca/atom.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Julia Evans",
+      "feedUrl": "https://jvns.ca/atom.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Daring Fireball",
+      "feedUrl": "https://daringfireball.net/feeds/main",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 264,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Daring Fireball",
+      "feedUrl": "https://daringfireball.net/feeds/main",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 187,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Daring Fireball",
+      "feedUrl": "https://daringfireball.net/feeds/main",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Daring Fireball",
+      "feedUrl": "https://daringfireball.net/feeds/main",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 22,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Go Blog",
+      "feedUrl": "https://go.dev/blog/feed.atom",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 252,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Go Blog",
+      "feedUrl": "https://go.dev/blog/feed.atom",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 149,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "The Go Blog",
+      "feedUrl": "https://go.dev/blog/feed.atom",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Go Blog",
+      "feedUrl": "https://go.dev/blog/feed.atom",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 20,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Rust Blog",
+      "feedUrl": "https://blog.rust-lang.org/feed.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 202,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Rust Blog",
+      "feedUrl": "https://blog.rust-lang.org/feed.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 185,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Rust Blog",
+      "feedUrl": "https://blog.rust-lang.org/feed.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Rust Blog",
+      "feedUrl": "https://blog.rust-lang.org/feed.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 25,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Python Insider",
+      "feedUrl": "https://blog.python.org/feeds/posts/default",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 224,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Python Insider",
+      "feedUrl": "https://blog.python.org/feeds/posts/default",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 143,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Python Insider",
+      "feedUrl": "https://blog.python.org/feeds/posts/default",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Python Insider",
+      "feedUrl": "https://blog.python.org/feeds/posts/default",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 23,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "GitHub Blog",
+      "feedUrl": "https://github.blog/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 161,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "GitHub Blog",
+      "feedUrl": "https://github.blog/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "GitHub Blog",
+      "feedUrl": "https://github.blog/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "GitHub Blog",
+      "feedUrl": "https://github.blog/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 27,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Cloudflare Blog",
+      "feedUrl": "https://blog.cloudflare.com/rss/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 474,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Cloudflare Blog",
+      "feedUrl": "https://blog.cloudflare.com/rss/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 111,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Cloudflare Blog",
+      "feedUrl": "https://blog.cloudflare.com/rss/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Cloudflare Blog",
+      "feedUrl": "https://blog.cloudflare.com/rss/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 9,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Vercel Blog",
+      "feedUrl": "https://vercel.com/atom",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1220,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Vercel Blog",
+      "feedUrl": "https://vercel.com/atom",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 178,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Vercel Blog",
+      "feedUrl": "https://vercel.com/atom",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Vercel Blog",
+      "feedUrl": "https://vercel.com/atom",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 16,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Fly.io Blog",
+      "feedUrl": "https://fly.io/blog/feed.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1847,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Fly.io Blog",
+      "feedUrl": "https://fly.io/blog/feed.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 425,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Fly.io Blog",
+      "feedUrl": "https://fly.io/blog/feed.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Fly.io Blog",
+      "feedUrl": "https://fly.io/blog/feed.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 15,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Stripe Blog",
+      "feedUrl": "https://stripe.com/blog/feed.rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 254,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Stripe Blog",
+      "feedUrl": "https://stripe.com/blog/feed.rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Stripe Blog",
+      "feedUrl": "https://stripe.com/blog/feed.rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Stripe Blog",
+      "feedUrl": "https://stripe.com/blog/feed.rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 8,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Dropbox Tech",
+      "feedUrl": "https://dropbox.tech/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1077,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Dropbox Tech",
+      "feedUrl": "https://dropbox.tech/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 199,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Dropbox Tech",
+      "feedUrl": "https://dropbox.tech/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Dropbox Tech",
+      "feedUrl": "https://dropbox.tech/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 7,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Slack Engineering",
+      "feedUrl": "https://slack.engineering/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 223,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Slack Engineering",
+      "feedUrl": "https://slack.engineering/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 123,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Slack Engineering",
+      "feedUrl": "https://slack.engineering/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Slack Engineering",
+      "feedUrl": "https://slack.engineering/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 16,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Discord Blog",
+      "feedUrl": "https://discord.com/blog/rss.xml",
+      "proxy": "masterp99-hf",
+      "success": false,
+      "elapsed": 76,
+      "error": "HTTP 502",
+      "status": null
+    },
+    {
+      "feed": "Discord Blog",
+      "feedUrl": "https://discord.com/blog/rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 105,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Discord Blog",
+      "feedUrl": "https://discord.com/blog/rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 10001,
+      "error": "TIMEOUT",
+      "status": null
+    },
+    {
+      "feed": "Discord Blog",
+      "feedUrl": "https://discord.com/blog/rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 11,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Nature",
+      "feedUrl": "https://www.nature.com/nature.rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1232,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Nature",
+      "feedUrl": "https://www.nature.com/nature.rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 335,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Nature",
+      "feedUrl": "https://www.nature.com/nature.rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Nature",
+      "feedUrl": "https://www.nature.com/nature.rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Science Daily",
+      "feedUrl": "https://www.sciencedaily.com/rss/all.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 428,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Science Daily",
+      "feedUrl": "https://www.sciencedaily.com/rss/all.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 286,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Science Daily",
+      "feedUrl": "https://www.sciencedaily.com/rss/all.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Science Daily",
+      "feedUrl": "https://www.sciencedaily.com/rss/all.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 18,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "New Scientist",
+      "feedUrl": "https://www.newscientist.com/feed/home/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1292,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "New Scientist",
+      "feedUrl": "https://www.newscientist.com/feed/home/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 292,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "New Scientist",
+      "feedUrl": "https://www.newscientist.com/feed/home/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "New Scientist",
+      "feedUrl": "https://www.newscientist.com/feed/home/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 19,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Phys.org",
+      "feedUrl": "https://phys.org/rss-feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 283,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Phys.org",
+      "feedUrl": "https://phys.org/rss-feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 124,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Phys.org",
+      "feedUrl": "https://phys.org/rss-feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Phys.org",
+      "feedUrl": "https://phys.org/rss-feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 22,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Ars Science",
+      "feedUrl": "https://feeds.arstechnica.com/arstechnica/science",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 169,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Ars Science",
+      "feedUrl": "https://feeds.arstechnica.com/arstechnica/science",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 136,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Ars Science",
+      "feedUrl": "https://feeds.arstechnica.com/arstechnica/science",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Ars Science",
+      "feedUrl": "https://feeds.arstechnica.com/arstechnica/science",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 14,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Live Science",
+      "feedUrl": "https://www.livescience.com/feeds.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 197,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Live Science",
+      "feedUrl": "https://www.livescience.com/feeds.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 116,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Live Science",
+      "feedUrl": "https://www.livescience.com/feeds.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Live Science",
+      "feedUrl": "https://www.livescience.com/feeds.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 13,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "ScienceAlert",
+      "feedUrl": "https://www.sciencealert.com/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 515,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "ScienceAlert",
+      "feedUrl": "https://www.sciencealert.com/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 150,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "ScienceAlert",
+      "feedUrl": "https://www.sciencealert.com/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "ScienceAlert",
+      "feedUrl": "https://www.sciencealert.com/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 27,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Smithsonian",
+      "feedUrl": "https://www.smithsonianmag.com/rss/science-nature/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 282,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Smithsonian",
+      "feedUrl": "https://www.smithsonianmag.com/rss/science-nature/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 188,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Smithsonian",
+      "feedUrl": "https://www.smithsonianmag.com/rss/science-nature/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Smithsonian",
+      "feedUrl": "https://www.smithsonianmag.com/rss/science-nature/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "NPR",
+      "feedUrl": "https://feeds.npr.org/1001/rss.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 119,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "NPR",
+      "feedUrl": "https://feeds.npr.org/1001/rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 109,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "NPR",
+      "feedUrl": "https://feeds.npr.org/1001/rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "NPR",
+      "feedUrl": "https://feeds.npr.org/1001/rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "BBC",
+      "feedUrl": "https://feeds.bbci.co.uk/news/rss.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 111,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "BBC",
+      "feedUrl": "https://feeds.bbci.co.uk/news/rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 107,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "BBC",
+      "feedUrl": "https://feeds.bbci.co.uk/news/rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "BBC",
+      "feedUrl": "https://feeds.bbci.co.uk/news/rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 12,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Guardian",
+      "feedUrl": "https://www.theguardian.com/world/rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 125,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Guardian",
+      "feedUrl": "https://www.theguardian.com/world/rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 107,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "The Guardian",
+      "feedUrl": "https://www.theguardian.com/world/rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Guardian",
+      "feedUrl": "https://www.theguardian.com/world/rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 9,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Al Jazeera",
+      "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 136,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Al Jazeera",
+      "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 115,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Al Jazeera",
+      "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Al Jazeera",
+      "feedUrl": "https://www.aljazeera.com/xml/rss/all.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 9,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Atlantic",
+      "feedUrl": "https://www.theatlantic.com/feed/all/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 274,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Atlantic",
+      "feedUrl": "https://www.theatlantic.com/feed/all/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 121,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "The Atlantic",
+      "feedUrl": "https://www.theatlantic.com/feed/all/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Atlantic",
+      "feedUrl": "https://www.theatlantic.com/feed/all/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 13,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Vox",
+      "feedUrl": "https://www.vox.com/rss/index.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 114,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Vox",
+      "feedUrl": "https://www.vox.com/rss/index.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 103,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Vox",
+      "feedUrl": "https://www.vox.com/rss/index.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Vox",
+      "feedUrl": "https://www.vox.com/rss/index.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 6,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Intercept",
+      "feedUrl": "https://theintercept.com/feed/?rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 250,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Intercept",
+      "feedUrl": "https://theintercept.com/feed/?rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 160,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "The Intercept",
+      "feedUrl": "https://theintercept.com/feed/?rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Intercept",
+      "feedUrl": "https://theintercept.com/feed/?rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 8,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "ProPublica",
+      "feedUrl": "https://www.propublica.org/feeds/propublica/main",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 391,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "ProPublica",
+      "feedUrl": "https://www.propublica.org/feeds/propublica/main",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 118,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "ProPublica",
+      "feedUrl": "https://www.propublica.org/feeds/propublica/main",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "ProPublica",
+      "feedUrl": "https://www.propublica.org/feeds/propublica/main",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 6,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Axios",
+      "feedUrl": "https://api.axios.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 448,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Axios",
+      "feedUrl": "https://api.axios.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 121,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Axios",
+      "feedUrl": "https://api.axios.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Axios",
+      "feedUrl": "https://api.axios.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 15,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Rest of World",
+      "feedUrl": "https://restofworld.org/feed/latest/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 172,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Rest of World",
+      "feedUrl": "https://restofworld.org/feed/latest/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 121,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Rest of World",
+      "feedUrl": "https://restofworld.org/feed/latest/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Rest of World",
+      "feedUrl": "https://restofworld.org/feed/latest/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Bloomberg",
+      "feedUrl": "https://feeds.bloomberg.com/markets/news.rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 121,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Bloomberg",
+      "feedUrl": "https://feeds.bloomberg.com/markets/news.rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Bloomberg",
+      "feedUrl": "https://feeds.bloomberg.com/markets/news.rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Bloomberg",
+      "feedUrl": "https://feeds.bloomberg.com/markets/news.rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 11,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Y Combinator",
+      "feedUrl": "https://www.ycombinator.com/blog/rss/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 318,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Y Combinator",
+      "feedUrl": "https://www.ycombinator.com/blog/rss/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 189,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Y Combinator",
+      "feedUrl": "https://www.ycombinator.com/blog/rss/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Y Combinator",
+      "feedUrl": "https://www.ycombinator.com/blog/rss/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Stratechery",
+      "feedUrl": "https://stratechery.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 188,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Stratechery",
+      "feedUrl": "https://stratechery.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 148,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Stratechery",
+      "feedUrl": "https://stratechery.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Stratechery",
+      "feedUrl": "https://stratechery.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 7,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Benedict Evans",
+      "feedUrl": "https://www.ben-evans.com/benedictevans?format=rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 356,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Benedict Evans",
+      "feedUrl": "https://www.ben-evans.com/benedictevans?format=rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 121,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Benedict Evans",
+      "feedUrl": "https://www.ben-evans.com/benedictevans?format=rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Benedict Evans",
+      "feedUrl": "https://www.ben-evans.com/benedictevans?format=rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 7,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Lenny's Newsletter",
+      "feedUrl": "https://www.lennysnewsletter.com/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 459,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Lenny's Newsletter",
+      "feedUrl": "https://www.lennysnewsletter.com/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 189,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Lenny's Newsletter",
+      "feedUrl": "https://www.lennysnewsletter.com/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Lenny's Newsletter",
+      "feedUrl": "https://www.lennysnewsletter.com/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "UX Collective",
+      "feedUrl": "https://uxdesign.cc/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 304,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "UX Collective",
+      "feedUrl": "https://uxdesign.cc/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 180,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "UX Collective",
+      "feedUrl": "https://uxdesign.cc/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "UX Collective",
+      "feedUrl": "https://uxdesign.cc/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 14,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "NN Group",
+      "feedUrl": "https://www.nngroup.com/feed/rss/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 166,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "NN Group",
+      "feedUrl": "https://www.nngroup.com/feed/rss/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "NN Group",
+      "feedUrl": "https://www.nngroup.com/feed/rss/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "NN Group",
+      "feedUrl": "https://www.nngroup.com/feed/rss/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 20,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Sidebar",
+      "feedUrl": "https://sidebar.io/feed.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 152,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Sidebar",
+      "feedUrl": "https://sidebar.io/feed.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Sidebar",
+      "feedUrl": "https://sidebar.io/feed.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Sidebar",
+      "feedUrl": "https://sidebar.io/feed.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Codrops",
+      "feedUrl": "https://tympanus.net/codrops/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 990,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Codrops",
+      "feedUrl": "https://tympanus.net/codrops/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 171,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Codrops",
+      "feedUrl": "https://tympanus.net/codrops/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Codrops",
+      "feedUrl": "https://tympanus.net/codrops/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 14,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Dribbble Blog",
+      "feedUrl": "https://dribbble.com/stories.rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 303,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Dribbble Blog",
+      "feedUrl": "https://dribbble.com/stories.rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 133,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Dribbble Blog",
+      "feedUrl": "https://dribbble.com/stories.rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Dribbble Blog",
+      "feedUrl": "https://dribbble.com/stories.rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 19,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Webdesigner Depot",
+      "feedUrl": "https://webdesignerdepot.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": false,
+      "elapsed": 162,
+      "error": "HTTP 502",
+      "status": null
+    },
+    {
+      "feed": "Webdesigner Depot",
+      "feedUrl": "https://webdesignerdepot.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 161,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Webdesigner Depot",
+      "feedUrl": "https://webdesignerdepot.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 10002,
+      "error": "TIMEOUT",
+      "status": null
+    },
+    {
+      "feed": "Webdesigner Depot",
+      "feedUrl": "https://webdesignerdepot.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 26,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Krebs on Security",
+      "feedUrl": "https://krebsonsecurity.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": false,
+      "elapsed": 457,
+      "error": "Not valid RSS/Atom",
+      "status": 200
+    },
+    {
+      "feed": "Krebs on Security",
+      "feedUrl": "https://krebsonsecurity.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 151,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Krebs on Security",
+      "feedUrl": "https://krebsonsecurity.com/feed/",
+      "proxy": "allorigins.win",
+      "success": true,
+      "elapsed": 15713,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Krebs on Security",
+      "feedUrl": "https://krebsonsecurity.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 12,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Schneier on Security",
+      "feedUrl": "https://www.schneier.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 396,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Schneier on Security",
+      "feedUrl": "https://www.schneier.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 144,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Schneier on Security",
+      "feedUrl": "https://www.schneier.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Schneier on Security",
+      "feedUrl": "https://www.schneier.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 14,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Hacker News",
+      "feedUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 219,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Hacker News",
+      "feedUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 128,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "The Hacker News",
+      "feedUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Hacker News",
+      "feedUrl": "https://feeds.feedburner.com/TheHackersNews",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 14,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Dark Reading",
+      "feedUrl": "https://www.darkreading.com/rss.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 414,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Dark Reading",
+      "feedUrl": "https://www.darkreading.com/rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 112,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Dark Reading",
+      "feedUrl": "https://www.darkreading.com/rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Dark Reading",
+      "feedUrl": "https://www.darkreading.com/rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 5,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Troy Hunt",
+      "feedUrl": "https://www.troyhunt.com/rss/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 196,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Troy Hunt",
+      "feedUrl": "https://www.troyhunt.com/rss/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 114,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Troy Hunt",
+      "feedUrl": "https://www.troyhunt.com/rss/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Troy Hunt",
+      "feedUrl": "https://www.troyhunt.com/rss/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 12,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Google Project Zero",
+      "feedUrl": "https://projectzero.google/feed.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1755,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Google Project Zero",
+      "feedUrl": "https://projectzero.google/feed.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 122,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Google Project Zero",
+      "feedUrl": "https://projectzero.google/feed.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Google Project Zero",
+      "feedUrl": "https://projectzero.google/feed.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "SANS ISC",
+      "feedUrl": "https://isc.sans.edu/rssfeed_full.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 819,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "SANS ISC",
+      "feedUrl": "https://isc.sans.edu/rssfeed_full.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 354,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "SANS ISC",
+      "feedUrl": "https://isc.sans.edu/rssfeed_full.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "SANS ISC",
+      "feedUrl": "https://isc.sans.edu/rssfeed_full.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 13,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Graham Cluley",
+      "feedUrl": "https://grahamcluley.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Graham Cluley",
+      "feedUrl": "https://grahamcluley.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 367,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Graham Cluley",
+      "feedUrl": "https://grahamcluley.com/feed/",
+      "proxy": "allorigins.win",
+      "success": true,
+      "elapsed": 372,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Graham Cluley",
+      "feedUrl": "https://grahamcluley.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 9,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Lex Fridman",
+      "feedUrl": "https://lexfridman.com/feed/podcast/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 4143,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Lex Fridman",
+      "feedUrl": "https://lexfridman.com/feed/podcast/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 429,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Lex Fridman",
+      "feedUrl": "https://lexfridman.com/feed/podcast/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Lex Fridman",
+      "feedUrl": "https://lexfridman.com/feed/podcast/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 13,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Changelog",
+      "feedUrl": "https://changelog.com/podcast/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 3822,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Changelog",
+      "feedUrl": "https://changelog.com/podcast/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 186,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Changelog",
+      "feedUrl": "https://changelog.com/podcast/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Changelog",
+      "feedUrl": "https://changelog.com/podcast/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Software Engineering Daily",
+      "feedUrl": "https://softwareengineeringdaily.com/feed/podcast/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 605,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Software Engineering Daily",
+      "feedUrl": "https://softwareengineeringdaily.com/feed/podcast/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 202,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Software Engineering Daily",
+      "feedUrl": "https://softwareengineeringdaily.com/feed/podcast/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Software Engineering Daily",
+      "feedUrl": "https://softwareengineeringdaily.com/feed/podcast/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 20,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Talk Python",
+      "feedUrl": "https://talkpython.fm/episodes/rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 909,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Talk Python",
+      "feedUrl": "https://talkpython.fm/episodes/rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 128,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Talk Python",
+      "feedUrl": "https://talkpython.fm/episodes/rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Talk Python",
+      "feedUrl": "https://talkpython.fm/episodes/rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 16,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Acquired",
+      "feedUrl": "https://feeds.transistor.fm/acquired",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 1157,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Acquired",
+      "feedUrl": "https://feeds.transistor.fm/acquired",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 147,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Acquired",
+      "feedUrl": "https://feeds.transistor.fm/acquired",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Acquired",
+      "feedUrl": "https://feeds.transistor.fm/acquired",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 20,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Vergecast",
+      "feedUrl": "https://feeds.megaphone.fm/vergecast",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 2533,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Vergecast",
+      "feedUrl": "https://feeds.megaphone.fm/vergecast",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 158,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "The Vergecast",
+      "feedUrl": "https://feeds.megaphone.fm/vergecast",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Vergecast",
+      "feedUrl": "https://feeds.megaphone.fm/vergecast",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 16,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Darknet Diaries",
+      "feedUrl": "https://podcast.darknetdiaries.com/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 3549,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Darknet Diaries",
+      "feedUrl": "https://podcast.darknetdiaries.com/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 268,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Darknet Diaries",
+      "feedUrl": "https://podcast.darknetdiaries.com/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Darknet Diaries",
+      "feedUrl": "https://podcast.darknetdiaries.com/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 19,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Wait But Why",
+      "feedUrl": "https://waitbutwhy.com/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 339,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Wait But Why",
+      "feedUrl": "https://waitbutwhy.com/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 176,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Wait But Why",
+      "feedUrl": "https://waitbutwhy.com/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Wait But Why",
+      "feedUrl": "https://waitbutwhy.com/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 15,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Brain Pickings",
+      "feedUrl": "https://www.themarginalian.org/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 471,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Brain Pickings",
+      "feedUrl": "https://www.themarginalian.org/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 160,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Brain Pickings",
+      "feedUrl": "https://www.themarginalian.org/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Brain Pickings",
+      "feedUrl": "https://www.themarginalian.org/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 23,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Kottke",
+      "feedUrl": "https://feeds.kottke.org/main",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 402,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Kottke",
+      "feedUrl": "https://feeds.kottke.org/main",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 207,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Kottke",
+      "feedUrl": "https://feeds.kottke.org/main",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Kottke",
+      "feedUrl": "https://feeds.kottke.org/main",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 18,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Austin Kleon",
+      "feedUrl": "https://austinkleon.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 466,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Austin Kleon",
+      "feedUrl": "https://austinkleon.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 178,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Austin Kleon",
+      "feedUrl": "https://austinkleon.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Austin Kleon",
+      "feedUrl": "https://austinkleon.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Seth Godin",
+      "feedUrl": "https://seths.blog/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 97,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Seth Godin",
+      "feedUrl": "https://seths.blog/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Seth Godin",
+      "feedUrl": "https://seths.blog/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Seth Godin",
+      "feedUrl": "https://seths.blog/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 12,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Longform",
+      "feedUrl": "https://longform.org/feed.rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 167,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Longform",
+      "feedUrl": "https://longform.org/feed.rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 133,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Longform",
+      "feedUrl": "https://longform.org/feed.rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Longform",
+      "feedUrl": "https://longform.org/feed.rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 16,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Farnam Street",
+      "feedUrl": "https://fs.blog/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 216,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Farnam Street",
+      "feedUrl": "https://fs.blog/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 144,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Farnam Street",
+      "feedUrl": "https://fs.blog/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Farnam Street",
+      "feedUrl": "https://fs.blog/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "XKCD",
+      "feedUrl": "https://xkcd.com/rss.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 104,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "XKCD",
+      "feedUrl": "https://xkcd.com/rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "XKCD",
+      "feedUrl": "https://xkcd.com/rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "XKCD",
+      "feedUrl": "https://xkcd.com/rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 12,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Aeon",
+      "feedUrl": "https://aeon.co/feed.rss",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 130,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Aeon",
+      "feedUrl": "https://aeon.co/feed.rss",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 110,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Aeon",
+      "feedUrl": "https://aeon.co/feed.rss",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Aeon",
+      "feedUrl": "https://aeon.co/feed.rss",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 13,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Nautilus",
+      "feedUrl": "https://nautil.us/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 117,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Nautilus",
+      "feedUrl": "https://nautil.us/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Nautilus",
+      "feedUrl": "https://nautil.us/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Nautilus",
+      "feedUrl": "https://nautil.us/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 18,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Pudding",
+      "feedUrl": "https://pudding.cool/rss.xml",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 148,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Pudding",
+      "feedUrl": "https://pudding.cool/rss.xml",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 109,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "The Pudding",
+      "feedUrl": "https://pudding.cool/rss.xml",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Pudding",
+      "feedUrl": "https://pudding.cool/rss.xml",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 5,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Literary Hub",
+      "feedUrl": "https://lithub.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 520,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Literary Hub",
+      "feedUrl": "https://lithub.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 110,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Literary Hub",
+      "feedUrl": "https://lithub.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Literary Hub",
+      "feedUrl": "https://lithub.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 10,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Open Culture",
+      "feedUrl": "https://www.openculture.com/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 563,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Open Culture",
+      "feedUrl": "https://www.openculture.com/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 125,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Open Culture",
+      "feedUrl": "https://www.openculture.com/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Open Culture",
+      "feedUrl": "https://www.openculture.com/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Boing Boing",
+      "feedUrl": "https://boingboing.net/feed",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 119,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Boing Boing",
+      "feedUrl": "https://boingboing.net/feed",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Boing Boing",
+      "feedUrl": "https://boingboing.net/feed",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Boing Boing",
+      "feedUrl": "https://boingboing.net/feed",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "The Morning News",
+      "feedUrl": "https://themorningnews.org/rss/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 137,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "The Morning News",
+      "feedUrl": "https://themorningnews.org/rss/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Morning News",
+      "feedUrl": "https://themorningnews.org/rss/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "The Morning News",
+      "feedUrl": "https://themorningnews.org/rss/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 17,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    },
+    {
+      "feed": "Cup of Jo",
+      "feedUrl": "https://cupofjo.com/feed/",
+      "proxy": "masterp99-hf",
+      "success": true,
+      "elapsed": 290,
+      "error": null,
+      "status": 200
+    },
+    {
+      "feed": "Cup of Jo",
+      "feedUrl": "https://cupofjo.com/feed/",
+      "proxy": "corsproxy.io",
+      "success": false,
+      "elapsed": 117,
+      "error": "HTTP 403",
+      "status": null
+    },
+    {
+      "feed": "Cup of Jo",
+      "feedUrl": "https://cupofjo.com/feed/",
+      "proxy": "allorigins.win",
+      "success": false,
+      "elapsed": 0,
+      "error": "SKIPPED",
+      "status": null
+    },
+    {
+      "feed": "Cup of Jo",
+      "feedUrl": "https://cupofjo.com/feed/",
+      "proxy": "thingproxy",
+      "success": false,
+      "elapsed": 13,
+      "error": "getaddrinfo ENOTFOUND thingproxy.freeboard.io",
+      "status": null
+    }
+  ]
+}
