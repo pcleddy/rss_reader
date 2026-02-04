@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- RSS Reader v0.6.1 -->
+<!-- RSS Reader v0.7.0 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader v0.6.1</title>
+    <title>RSS Reader v0.7.0</title>
     <style>
         :root {
             --bg-primary: #f5f5f5;
@@ -192,6 +192,12 @@
             color: var(--text-muted);
             margin-top: 5px;
         }
+        .expand-link {
+            color: var(--link-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .expand-link:hover { text-decoration: underline; }
         .item-desc {
             font-size: 14px;
             color: var(--text-desc);
@@ -309,7 +315,7 @@
 </head>
 <body>
     <div class="header-row">
-        <h1>📰 RSS Reader</h1>
+        <h1>📰 RSS Reader <span style="font-size: 11px; font-weight: normal; color: var(--text-muted); vertical-align: middle;">v0.7.0</span></h1>
         <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌓</button>
     </div>
     <p class="subtitle">Import your state file to continue where you left off, or add feeds to get started.</p>
@@ -645,8 +651,14 @@
 
         // Fetching
         async function fetchFeed(url) {
+            const controller = new AbortController();
+            const timeout = setTimeout(() => controller.abort(), 3000);
+
             try {
-                const response = await fetch(CORS_PROXY + encodeURIComponent(url));
+                const response = await fetch(CORS_PROXY + encodeURIComponent(url), {
+                    signal: controller.signal
+                });
+                clearTimeout(timeout);
                 if (!response.ok) throw new Error('Fetch failed');
 
                 const text = await response.text();
@@ -697,12 +709,16 @@
                     if (!guid) guid = item.querySelector('id')?.textContent;
 
                     const id = guid || link || title;
+                    const fullDesc = stripHtml(desc || '');
+                    const preview = fullDesc.slice(0, 300);
 
                     return {
                         id,
                         title: title || 'Untitled',
                         link,
-                        description: stripHtml(desc || '').slice(0, 300),
+                        description: preview,
+                        fullDescription: fullDesc,
+                        hasMore: fullDesc.length > 300,
                         date: date ? new Date(date) : null,
                         feedUrl: url,
                         feedTitle: feedTitle || url,
@@ -732,6 +748,7 @@
             let completed = 0;
             let success = 0;
             let failed = 0;
+            const timedOut = [];
 
             const updateProgress = () => {
                 const pct = Math.round((completed / total) * 100);
@@ -751,6 +768,9 @@
                         return result;
                     } catch (e) {
                         failed++;
+                        if (e.name === 'AbortError') {
+                            timedOut.push(feed.title || feed.url);
+                        }
                         throw e;
                     } finally {
                         completed++;
@@ -772,7 +792,11 @@
             renderItems();
 
             if (failed > 0) {
-                showStatus(`Loaded ${success} feed(s), ${failed} failed.`, 'error');
+                let msg = `Loaded ${success} feed(s), ${failed} failed.`;
+                if (timedOut.length > 0) {
+                    msg += ` Timed out: ${timedOut.join(', ')}`;
+                }
+                showStatus(msg, 'error');
             } else {
                 showStatus(`Loaded ${allItems.length} items from ${success} feed(s).`, 'success');
             }
@@ -813,15 +837,36 @@
                             <div class="item-meta">
                                 ${escapeHtml(item.feedTitle)}
                                 ${item.date ? '• ' + formatDate(item.date) : ''}
+                                ${item.hasMore ? `• <a href="#" class="expand-link" onclick="toggleExpand(event, ${idx})">expand</a>` : ''}
                             </div>
                         </div>
                         <button class="mark-read-btn" onclick="toggleRead(${idx})">
                             ${item.read ? 'Mark unread' : 'Mark read'}
                         </button>
                     </div>
-                    ${item.description ? `<div class="item-desc">${escapeHtml(item.description)}${item.description.length >= 300 ? '...' : ''}</div>` : ''}
+                    ${item.description ? `
+                        <div class="item-desc item-preview" id="preview-${idx}">${escapeHtml(item.description)}${item.hasMore ? '...' : ''}</div>
+                        <div class="item-desc item-full hidden" id="full-${idx}">${escapeHtml(item.fullDescription)}</div>
+                    ` : ''}
                 </div>
             `}).join('');
+        }
+
+        function toggleExpand(event, idx) {
+            event.preventDefault();
+            const preview = document.getElementById('preview-' + idx);
+            const full = document.getElementById('full-' + idx);
+            const link = event.target;
+
+            if (full.classList.contains('hidden')) {
+                preview.classList.add('hidden');
+                full.classList.remove('hidden');
+                link.textContent = 'collapse';
+            } else {
+                preview.classList.remove('hidden');
+                full.classList.add('hidden');
+                link.textContent = 'expand';
+            }
         }
 
         function markRead(idx) {
