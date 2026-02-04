@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- RSS Reader v0.9.4 -->
+<!-- RSS Reader v0.9.5 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader v0.9.4</title>
+    <title>RSS Reader v0.9.5</title>
     <style>
         :root {
             --bg-primary: #f5f5f5;
@@ -315,7 +315,7 @@
 </head>
 <body>
     <div class="header-row">
-        <h1>📰 RSS Reader <span style="font-size: 11px; font-weight: normal; color: var(--text-muted); vertical-align: middle;">v0.9.4</span></h1>
+        <h1>📰 RSS Reader <span style="font-size: 11px; font-weight: normal; color: var(--text-muted); vertical-align: middle;">v0.9.5</span></h1>
         <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌓</button>
     </div>
     <p class="subtitle">Import your state file to continue where you left off, or add feeds to get started.</p>
@@ -323,7 +323,7 @@
     <div class="controls">
         <input type="url" id="feedUrl" placeholder="Enter RSS feed URL...">
         <button class="primary" onclick="addFeed()">Add Feed</button>
-        <button onclick="refreshAll()">🔄 Refresh All</button>
+        <button id="refreshBtn" onclick="refreshAll()">🔄 Refresh All</button>
         <button onclick="document.getElementById('importFile').click()">📥 Import State</button>
         <button onclick="exportState()">📤 Export State</button>
         <button onclick="markAllRead()">✓ Mark All Read</button>
@@ -655,33 +655,82 @@
 
         function renderSuggestions() {
             const container = document.getElementById('suggestionsContent');
-            container.innerHTML = Object.entries(FEED_SUGGESTIONS).map(([category, feeds]) => `
+            container.innerHTML = Object.entries(FEED_SUGGESTIONS).map(([category, feeds]) => {
+                const addedCount = feeds.filter(f => state.feeds.some(sf => sf.url === f.url)).length;
+                const allAdded = addedCount === feeds.length;
+                return `
                 <div class="suggestions-category">
-                    <h3>${category}</h3>
+                    <h3>${category} <span style="font-size: 12px; font-weight: normal; color: var(--text-muted);">(${addedCount}/${feeds.length})</span></h3>
+                    <div style="margin-bottom: 8px;">
+                        <button onclick="subAllCategory('${escapeHtml(category)}')" style="font-size: 11px; padding: 3px 8px; margin-right: 5px;">📥 Sub All</button>
+                        <button onclick="unsubAllCategory('${escapeHtml(category)}')" style="font-size: 11px; padding: 3px 8px;">📤 Unsub All</button>
+                    </div>
                     <div>
                         ${feeds.map(feed => {
                             const isAdded = state.feeds.some(f => f.url === feed.url);
                             return `<span class="suggestion-item ${isAdded ? 'added' : ''}"
-                                         onclick="addSuggestion('${escapeHtml(feed.url)}', '${escapeHtml(feed.name)}')"
+                                         onclick="toggleSuggestion('${escapeHtml(feed.url)}', '${escapeHtml(feed.name)}')"
                                          title="${escapeHtml(feed.url)}">
                                 ${isAdded ? '✓' : '+'} ${escapeHtml(feed.name)}
                             </span>`;
                         }).join('')}
                     </div>
                 </div>
-            `).join('');
+            `}).join('');
         }
 
-        function addSuggestion(url, name) {
-            if (state.feeds.some(f => f.url === url)) {
-                showStatus('Feed already added!', 'error');
-                return;
+        function toggleSuggestion(url, name) {
+            const existing = state.feeds.findIndex(f => f.url === url);
+            if (existing >= 0) {
+                // Unsubscribe
+                state.feeds.splice(existing, 1);
+                allItems = allItems.filter(item => item.feedUrl !== url);
+                renderFeeds();
+                renderSuggestions();
+                renderItems();
+                saveToLocalStorage();
+                showStatus(`Removed "${name}".`, 'success');
+            } else {
+                // Subscribe
+                state.feeds.push({ url, title: name });
+                renderFeeds();
+                renderSuggestions();
+                saveToLocalStorage();
+                showStatus(`Added "${name}". Click Refresh All to load.`, 'success');
             }
-            state.feeds.push({ url, title: name });
+        }
+
+        function subAllCategory(category) {
+            const feeds = FEED_SUGGESTIONS[category] || [];
+            let added = 0;
+            feeds.forEach(feed => {
+                if (!state.feeds.some(f => f.url === feed.url)) {
+                    state.feeds.push({ url: feed.url, title: feed.name });
+                    added++;
+                }
+            });
             renderFeeds();
             renderSuggestions();
             saveToLocalStorage();
-            showStatus(`Added "${name}". Click Refresh All to load.`, 'success');
+            showStatus(`Added ${added} feeds from "${category}". Click Refresh All to load.`, 'success');
+        }
+
+        function unsubAllCategory(category) {
+            const feeds = FEED_SUGGESTIONS[category] || [];
+            let removed = 0;
+            feeds.forEach(feed => {
+                const idx = state.feeds.findIndex(f => f.url === feed.url);
+                if (idx >= 0) {
+                    state.feeds.splice(idx, 1);
+                    allItems = allItems.filter(item => item.feedUrl !== feed.url);
+                    removed++;
+                }
+            });
+            renderFeeds();
+            renderSuggestions();
+            renderItems();
+            saveToLocalStorage();
+            showStatus(`Removed ${removed} feeds from "${category}".`, 'success');
         }
 
         // Feed management
@@ -846,10 +895,15 @@
         }
 
         async function refreshAll() {
+            const refreshBtn = document.getElementById('refreshBtn');
             if (state.feeds.length === 0) {
                 showStatus('No feeds to refresh. Add some first!', 'error');
                 return;
             }
+
+            // Disable button and show loading state
+            refreshBtn.disabled = true;
+            refreshBtn.textContent = '⏳ Loading...';
 
             const total = state.feeds.length;
             let completed = 0;
@@ -938,6 +992,10 @@
             console.log(JSON.stringify(fetchStats, null, 2));
             window.getDebugStats = () => JSON.stringify(fetchStats, null, 2);
             console.log('Run getDebugStats() in console to copy stats');
+
+            // Re-enable button
+            refreshBtn.disabled = false;
+            refreshBtn.textContent = '🔄 Refresh All';
         }
 
         // Rendering items
