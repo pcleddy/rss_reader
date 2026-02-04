@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS Reader</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+            color: #333;
+        }
+        h1 { margin-bottom: 10px; }
+        .controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover { background: #f0f0f0; }
+        button.primary { background: #0066cc; color: #fff; border-color: #0066cc; }
+        button.primary:hover { background: #0055aa; }
+        input[type="text"], input[type="url"] {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+            flex: 1;
+            min-width: 200px;
+        }
+        .feeds-list {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .feeds-list h2 { margin-top: 0; font-size: 16px; }
+        .feed-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 10px;
+            background: #e8f4ff;
+            border-radius: 4px;
+            margin: 3px;
+            font-size: 13px;
+        }
+        .feed-tag button {
+            padding: 2px 6px;
+            font-size: 11px;
+            background: #ff6b6b;
+            color: #fff;
+            border: none;
+        }
+        .items-container {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .item:last-child { border-bottom: none; }
+        .item.read { opacity: 0.6; }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .item-title {
+            font-weight: 600;
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 15px;
+        }
+        .item-title:hover { text-decoration: underline; }
+        .item.read .item-title { color: #666; }
+        .item-meta {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+        }
+        .item-desc {
+            font-size: 14px;
+            color: #555;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+        .mark-read-btn {
+            font-size: 11px;
+            padding: 3px 8px;
+            white-space: nowrap;
+        }
+        .status {
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .status.loading { background: #fff3cd; }
+        .status.error { background: #f8d7da; color: #721c24; }
+        .status.success { background: #d4edda; color: #155724; }
+        .hidden { display: none; }
+        .stats {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        input[type="file"] { display: none; }
+    </style>
+</head>
+<body>
+    <h1>📰 RSS Reader</h1>
+    <p style="color: #666; margin-bottom: 20px;">Import your state file to continue where you left off, or add feeds to get started.</p>
+
+    <div class="controls">
+        <input type="url" id="feedUrl" placeholder="Enter RSS feed URL...">
+        <button class="primary" onclick="addFeed()">Add Feed</button>
+        <button onclick="refreshAll()">🔄 Refresh All</button>
+        <button onclick="document.getElementById('importFile').click()">📥 Import State</button>
+        <button onclick="exportState()">📤 Export State</button>
+        <button onclick="markAllRead()">✓ Mark All Read</button>
+        <input type="file" id="importFile" accept=".json" onchange="importState(event)">
+    </div>
+
+    <div class="feeds-list">
+        <h2>Subscriptions</h2>
+        <div id="feedsList">No feeds yet. Add one above or import a state file.</div>
+    </div>
+
+    <div id="status" class="status hidden"></div>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="items-container" id="itemsContainer">
+        <div class="item" style="color: #888; text-align: center;">
+            Add feeds and click "Refresh All" to load articles.
+        </div>
+    </div>
+
+    <script>
+        // State structure
+        let state = {
+            feeds: [],      // { url, title }
+            readItems: [],  // array of item links/guids that have been read
+            lastUpdated: null
+        };
+
+        let allItems = []; // Current session's fetched items
+
+        const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Try to load from localStorage as backup
+            const saved = localStorage.getItem('rssReaderState');
+            if (saved) {
+                try {
+                    state = JSON.parse(saved);
+                    renderFeeds();
+                    showStatus('Loaded previous session from browser storage.', 'success');
+                } catch (e) {}
+            }
+        });
+
+        function showStatus(msg, type = 'loading') {
+            const el = document.getElementById('status');
+            el.textContent = msg;
+            el.className = `status ${type}`;
+            el.classList.remove('hidden');
+            if (type !== 'loading') {
+                setTimeout(() => el.classList.add('hidden'), 3000);
+            }
+        }
+
+        function hideStatus() {
+            document.getElementById('status').classList.add('hidden');
+        }
+
+        function saveToLocalStorage() {
+            localStorage.setItem('rssReaderState', JSON.stringify(state));
+        }
+
+        // Feed management
+        function addFeed() {
+            const input = document.getElementById('feedUrl');
+            const url = input.value.trim();
+            if (!url) return;
+
+            if (state.feeds.some(f => f.url === url)) {
+                showStatus('Feed already exists!', 'error');
+                return;
+            }
+
+            state.feeds.push({ url, title: url });
+            input.value = '';
+            renderFeeds();
+            saveToLocalStorage();
+            fetchFeed(url);
+        }
+
+        function removeFeed(url) {
+            state.feeds = state.feeds.filter(f => f.url !== url);
+            allItems = allItems.filter(item => item.feedUrl !== url);
+            renderFeeds();
+            renderItems();
+            saveToLocalStorage();
+        }
+
+        function renderFeeds() {
+            const container = document.getElementById('feedsList');
+            if (state.feeds.length === 0) {
+                container.innerHTML = 'No feeds yet. Add one above or import a state file.';
+                return;
+            }
+            container.innerHTML = state.feeds.map(f => `
+                <span class="feed-tag">
+                    ${escapeHtml(f.title || f.url)}
+                    <button onclick="removeFeed('${escapeHtml(f.url)}')">&times;</button>
+                </span>
+            `).join('');
+        }
+
+        // Fetching
+        async function fetchFeed(url) {
+            try {
+                const response = await fetch(CORS_PROXY + encodeURIComponent(url));
+                if (!response.ok) throw new Error('Fetch failed');
+
+                const text = await response.text();
+                const parser = new DOMParser();
+                const xml = parser.parseFromString(text, 'text/xml');
+
+                // Check for parse errors
+                const parseError = xml.querySelector('parsererror');
+                if (parseError) throw new Error('Invalid RSS/XML');
+
+                // Handle RSS 2.0
+                let items = Array.from(xml.querySelectorAll('item'));
+                let feedTitle = xml.querySelector('channel > title')?.textContent;
+
+                // Handle Atom
+                if (items.length === 0) {
+                    items = Array.from(xml.querySelectorAll('entry'));
+                    feedTitle = xml.querySelector('feed > title')?.textContent;
+                }
+
+                // Update feed title
+                const feedIndex = state.feeds.findIndex(f => f.url === url);
+                if (feedIndex >= 0 && feedTitle) {
+                    state.feeds[feedIndex].title = feedTitle;
+                    renderFeeds();
+                    saveToLocalStorage();
+                }
+
+                // Parse items
+                const parsed = items.map(item => {
+                    // RSS 2.0
+                    let title = item.querySelector('title')?.textContent;
+                    let link = item.querySelector('link')?.textContent;
+                    let desc = item.querySelector('description')?.textContent;
+                    let date = item.querySelector('pubDate')?.textContent;
+                    let guid = item.querySelector('guid')?.textContent;
+
+                    // Atom fallbacks
+                    if (!link) {
+                        const linkEl = item.querySelector('link[href]');
+                        link = linkEl?.getAttribute('href');
+                    }
+                    if (!desc) desc = item.querySelector('summary')?.textContent || item.querySelector('content')?.textContent;
+                    if (!date) date = item.querySelector('published')?.textContent || item.querySelector('updated')?.textContent;
+                    if (!guid) guid = item.querySelector('id')?.textContent;
+
+                    const id = guid || link || title;
+
+                    return {
+                        id,
+                        title: title || 'Untitled',
+                        link,
+                        description: stripHtml(desc || '').slice(0, 300),
+                        date: date ? new Date(date) : null,
+                        feedUrl: url,
+                        feedTitle: feedTitle || url,
+                        read: state.readItems.includes(id)
+                    };
+                });
+
+                // Merge with existing items (avoid duplicates)
+                const existingIds = new Set(allItems.map(i => i.id));
+                const newItems = parsed.filter(i => !existingIds.has(i.id));
+                allItems = [...allItems, ...newItems];
+
+                return parsed.length;
+            } catch (e) {
+                console.error('Error fetching', url, e);
+                throw e;
+            }
+        }
+
+        async function refreshAll() {
+            if (state.feeds.length === 0) {
+                showStatus('No feeds to refresh. Add some first!', 'error');
+                return;
+            }
+
+            showStatus(`Fetching ${state.feeds.length} feed(s)...`);
+            allItems = [];
+
+            let success = 0;
+            let failed = 0;
+
+            for (const feed of state.feeds) {
+                try {
+                    await fetchFeed(feed.url);
+                    success++;
+                } catch (e) {
+                    failed++;
+                }
+            }
+
+            state.lastUpdated = new Date().toISOString();
+            saveToLocalStorage();
+
+            // Sort by date, newest first
+            allItems.sort((a, b) => {
+                if (!a.date) return 1;
+                if (!b.date) return -1;
+                return b.date - a.date;
+            });
+
+            renderItems();
+
+            if (failed > 0) {
+                showStatus(`Loaded ${success} feed(s), ${failed} failed.`, 'error');
+            } else {
+                showStatus(`Loaded ${allItems.length} items from ${success} feed(s).`, 'success');
+            }
+        }
+
+        // Rendering items
+        function renderItems() {
+            const container = document.getElementById('itemsContainer');
+            const unreadCount = allItems.filter(i => !i.read).length;
+
+            document.getElementById('stats').textContent =
+                `${allItems.length} items total, ${unreadCount} unread`;
+
+            if (allItems.length === 0) {
+                container.innerHTML = '<div class="item" style="color: #888; text-align: center;">No items. Add feeds and refresh.</div>';
+                return;
+            }
+
+            container.innerHTML = allItems.map((item, idx) => `
+                <div class="item ${item.read ? 'read' : ''}" data-idx="${idx}">
+                    <div class="item-header">
+                        <div>
+                            <a href="${escapeHtml(item.link || '#')}" target="_blank" class="item-title"
+                               onclick="markRead(${idx})">${escapeHtml(item.title)}</a>
+                            <div class="item-meta">
+                                ${escapeHtml(item.feedTitle)}
+                                ${item.date ? '• ' + formatDate(item.date) : ''}
+                            </div>
+                        </div>
+                        <button class="mark-read-btn" onclick="toggleRead(${idx})">
+                            ${item.read ? 'Mark unread' : 'Mark read'}
+                        </button>
+                    </div>
+                    ${item.description ? `<div class="item-desc">${escapeHtml(item.description)}${item.description.length >= 300 ? '...' : ''}</div>` : ''}
+                </div>
+            `).join('');
+        }
+
+        function markRead(idx) {
+            const item = allItems[idx];
+            if (!item.read) {
+                item.read = true;
+                if (!state.readItems.includes(item.id)) {
+                    state.readItems.push(item.id);
+                    saveToLocalStorage();
+                }
+                renderItems();
+            }
+        }
+
+        function toggleRead(idx) {
+            const item = allItems[idx];
+            item.read = !item.read;
+
+            if (item.read) {
+                if (!state.readItems.includes(item.id)) {
+                    state.readItems.push(item.id);
+                }
+            } else {
+                state.readItems = state.readItems.filter(id => id !== item.id);
+            }
+
+            saveToLocalStorage();
+            renderItems();
+        }
+
+        function markAllRead() {
+            allItems.forEach(item => {
+                item.read = true;
+                if (!state.readItems.includes(item.id)) {
+                    state.readItems.push(item.id);
+                }
+            });
+            saveToLocalStorage();
+            renderItems();
+            showStatus('All items marked as read.', 'success');
+        }
+
+        // Import/Export
+        function exportState() {
+            const data = JSON.stringify(state, null, 2);
+            const blob = new Blob([data], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `rss-state-${new Date().toISOString().slice(0,10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showStatus('State exported!', 'success');
+        }
+
+        function importState(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const imported = JSON.parse(e.target.result);
+
+                    // Validate structure
+                    if (!Array.isArray(imported.feeds)) {
+                        throw new Error('Invalid state file: missing feeds array');
+                    }
+
+                    state = {
+                        feeds: imported.feeds || [],
+                        readItems: imported.readItems || [],
+                        lastUpdated: imported.lastUpdated || null
+                    };
+
+                    allItems = [];
+                    renderFeeds();
+                    saveToLocalStorage();
+                    showStatus(`Imported ${state.feeds.length} feed(s). Click "Refresh All" to load articles.`, 'success');
+                } catch (err) {
+                    showStatus('Failed to import: ' + err.message, 'error');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = ''; // Reset for re-import
+        }
+
+        // Utilities
+        function escapeHtml(str) {
+            if (!str) return '';
+            return str.replace(/[&<>"']/g, m => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            })[m]);
+        }
+
+        function stripHtml(html) {
+            const tmp = document.createElement('div');
+            tmp.innerHTML = html;
+            return tmp.textContent || tmp.innerText || '';
+        }
+
+        function formatDate(date) {
+            const now = new Date();
+            const diff = now - date;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+            if (days === 0) {
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                if (hours === 0) {
+                    const mins = Math.floor(diff / (1000 * 60));
+                    return mins <= 1 ? 'just now' : `${mins}m ago`;
+                }
+                return `${hours}h ago`;
+            } else if (days === 1) {
+                return 'yesterday';
+            } else if (days < 7) {
+                return `${days}d ago`;
+            }
+            return date.toLocaleDateString();
+        }
+    </script>
+</body>
+</html>

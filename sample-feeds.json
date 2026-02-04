@@ -1,0 +1,11 @@
+{
+  "feeds": [
+    { "url": "https://hnrss.org/frontpage", "title": "Hacker News" },
+    { "url": "https://feeds.arstechnica.com/arstechnica/index", "title": "Ars Technica" },
+    { "url": "https://www.theverge.com/rss/index.xml", "title": "The Verge" },
+    { "url": "https://blog.anthropic.com/rss.xml", "title": "Anthropic Blog" },
+    { "url": "https://simonwillison.net/atom/everything/", "title": "Simon Willison" }
+  ],
+  "readItems": [],
+  "lastUpdated": null
+}
