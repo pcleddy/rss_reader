@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- RSS Reader v0.4.0 -->
+<!-- RSS Reader v0.4.1 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader v0.4.0</title>
+    <title>RSS Reader v0.4.1</title>
     <style>
         :root {
             --bg-primary: #f5f5f5;
@@ -366,6 +366,7 @@
         let activeFilter = null; // null = show all, or feed URL to filter
 
         const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
+        const ITEMS_PER_FEED = 25;
 
         // Feed suggestions by category
         const FEED_SUGGESTIONS = {
@@ -642,6 +643,9 @@
                     items = Array.from(xml.querySelectorAll('entry'));
                     feedTitle = xml.querySelector('feed > title')?.textContent;
                 }
+
+                // Limit items per feed
+                items = items.slice(0, ITEMS_PER_FEED);
 
                 // Update feed title
                 const feedIndex = state.feeds.findIndex(f => f.url === url);
