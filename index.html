@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- RSS Reader v0.4.1 -->
+<!-- RSS Reader v0.5.0 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader v0.4.1</title>
+    <title>RSS Reader v0.5.0</title>
     <style>
         :root {
             --bg-primary: #f5f5f5;
@@ -368,7 +368,7 @@
         const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
         const ITEMS_PER_FEED = 25;
 
-        // Feed suggestions by category
+        // Feed suggestions by category (tested Feb 2026)
         const FEED_SUGGESTIONS = {
             "Tech News": [
                 { name: "Hacker News", url: "https://hnrss.org/frontpage" },
@@ -378,23 +378,14 @@
                 { name: "Wired", url: "https://www.wired.com/feed/rss" },
                 { name: "MIT Tech Review", url: "https://www.technologyreview.com/feed/" },
                 { name: "Engadget", url: "https://www.engadget.com/rss.xml" },
-                { name: "Gizmodo", url: "https://gizmodo.com/rss" },
-                { name: "AnandTech", url: "https://www.anandtech.com/rss/" },
-                { name: "Tom's Hardware", url: "https://www.tomshardware.com/feeds/all" },
             ],
             "AI & ML": [
-                { name: "Anthropic Blog", url: "https://blog.anthropic.com/rss.xml" },
-                { name: "OpenAI Blog", url: "https://openai.com/blog/rss.xml" },
-                { name: "Google AI Blog", url: "https://blog.google/technology/ai/rss/" },
                 { name: "DeepMind", url: "https://deepmind.google/blog/rss.xml" },
                 { name: "Hugging Face Blog", url: "https://huggingface.co/blog/feed.xml" },
                 { name: "ML Mastery", url: "https://machinelearningmastery.com/feed/" },
-                { name: "Towards Data Science", url: "https://towardsdatascience.com/feed" },
-                { name: "Papers With Code", url: "https://paperswithcode.com/rss" },
             ],
             "Programming": [
                 { name: "Simon Willison", url: "https://simonwillison.net/atom/everything/" },
-                { name: "Joel on Software", url: "https://www.joelonsoftware.com/feed/" },
                 { name: "Coding Horror", url: "https://blog.codinghorror.com/rss/" },
                 { name: "CSS-Tricks", url: "https://css-tricks.com/feed/" },
                 { name: "Smashing Magazine", url: "https://www.smashingmagazine.com/feed/" },
@@ -410,16 +401,10 @@
             "Science": [
                 { name: "Nature", url: "https://www.nature.com/nature.rss" },
                 { name: "Science Daily", url: "https://www.sciencedaily.com/rss/all.xml" },
-                { name: "Quanta Magazine", url: "https://api.quantamagazine.org/feed/" },
                 { name: "New Scientist", url: "https://www.newscientist.com/feed/home/" },
-                { name: "Scientific American", url: "https://rss.sciam.com/ScientificAmerican-Global" },
                 { name: "Phys.org", url: "https://phys.org/rss-feed/" },
-                { name: "NASA", url: "https://www.nasa.gov/rss/dyn/breaking_news.rss" },
-                { name: "Space.com", url: "https://www.space.com/feeds/all" },
             ],
             "News": [
-                { name: "Reuters", url: "https://www.reutersagency.com/feed/" },
-                { name: "AP News", url: "https://apnews.com/index.rss" },
                 { name: "NPR", url: "https://feeds.npr.org/1001/rss.xml" },
                 { name: "BBC", url: "https://feeds.bbci.co.uk/news/rss.xml" },
                 { name: "The Guardian", url: "https://www.theguardian.com/world/rss" },
@@ -429,15 +414,10 @@
             ],
             "Business & Finance": [
                 { name: "Bloomberg", url: "https://feeds.bloomberg.com/markets/news.rss" },
-                { name: "Financial Times", url: "https://www.ft.com/rss/home" },
-                { name: "The Economist", url: "https://www.economist.com/rss" },
-                { name: "Harvard Business Review", url: "https://hbr.org/rss" },
                 { name: "Y Combinator", url: "https://www.ycombinator.com/blog/rss/" },
-                { name: "a]6z", url: "https://a16z.com/feed/" },
                 { name: "Stratechery", url: "https://stratechery.com/feed/" },
             ],
             "Design": [
-                { name: "Designer News", url: "https://www.designernews.co/?format=rss" },
                 { name: "UX Collective", url: "https://uxdesign.cc/feed" },
                 { name: "NN Group", url: "https://www.nngroup.com/feed/rss/" },
                 { name: "Sidebar", url: "https://sidebar.io/feed.xml" },
@@ -454,7 +434,6 @@
                 { name: "Lex Fridman", url: "https://lexfridman.com/feed/podcast/" },
                 { name: "Changelog", url: "https://changelog.com/podcast/feed" },
                 { name: "Software Engineering Daily", url: "https://softwareengineeringdaily.com/feed/podcast/" },
-                { name: "Syntax.fm", url: "https://feed.syntax.fm/rss" },
                 { name: "Talk Python", url: "https://talkpython.fm/episodes/rss" },
             ],
             "Miscellaneous": [
@@ -464,7 +443,6 @@
                 { name: "Austin Kleon", url: "https://austinkleon.com/feed/" },
                 { name: "Seth Godin", url: "https://seths.blog/feed/" },
                 { name: "Longform", url: "https://longform.org/feed.rss" },
-                { name: "The Browser", url: "https://thebrowser.com/feed/" },
                 { name: "Farnam Street", url: "https://fs.blog/feed/" },
                 { name: "XKCD", url: "https://xkcd.com/rss.xml" },
             ],
