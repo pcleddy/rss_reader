@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<!-- RSS Reader v0.1.0 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader</title>
+    <title>RSS Reader v0.1.0</title>
     <style>
         * { box-sizing: border-box; }
         body {
@@ -36,6 +37,7 @@
         button:hover { background: #f0f0f0; }
         button.primary { background: #0066cc; color: #fff; border-color: #0066cc; }
         button.primary:hover { background: #0055aa; }
+        button.small { padding: 4px 10px; font-size: 12px; }
         input[type="text"], input[type="url"] {
             padding: 8px 12px;
             border: 1px solid #ccc;
@@ -124,8 +126,82 @@
             font-size: 13px;
             color: #666;
             margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .stats label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
         }
         input[type="file"] { display: none; }
+
+        /* Suggestions sidebar */
+        .suggestions-panel {
+            margin-bottom: 20px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            overflow: hidden;
+        }
+        .suggestions-header {
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .suggestions-header h2 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .suggestions-header:hover { background: #f0f1f2; }
+        .suggestions-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .suggestions-content.open {
+            max-height: 600px;
+            overflow-y: auto;
+        }
+        .suggestions-category {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .suggestions-category:last-child { border-bottom: none; }
+        .suggestions-category h3 {
+            font-size: 12px;
+            color: #666;
+            margin: 0 0 8px 0;
+            text-transform: uppercase;
+        }
+        .suggestion-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            margin: 2px;
+            background: #f0f7ff;
+            border: 1px solid #d0e3f7;
+            border-radius: 4px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .suggestion-item:hover {
+            background: #e0efff;
+            border-color: #0066cc;
+        }
+        .suggestion-item.added {
+            background: #e8f5e9;
+            border-color: #a5d6a7;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -142,6 +218,15 @@
         <input type="file" id="importFile" accept=".json" onchange="importState(event)">
     </div>
 
+    <!-- Suggestions Panel -->
+    <div class="suggestions-panel">
+        <div class="suggestions-header" onclick="toggleSuggestions()">
+            <h2>📚 Discover Feeds</h2>
+            <span id="suggestionsToggle">▶ Show</span>
+        </div>
+        <div class="suggestions-content" id="suggestionsContent"></div>
+    </div>
+
     <div class="feeds-list">
         <h2>Subscriptions</h2>
         <div id="feedsList">No feeds yet. Add one above or import a state file.</div>
@@ -149,7 +234,13 @@
 
     <div id="status" class="status hidden"></div>
 
-    <div class="stats" id="stats"></div>
+    <div class="stats" id="stats">
+        <span id="statsText"></span>
+        <label>
+            <input type="checkbox" id="showReadToggle" onchange="renderItems()">
+            Show read items
+        </label>
+    </div>
 
     <div class="items-container" id="itemsContainer">
         <div class="item" style="color: #888; text-align: center;">
@@ -169,6 +260,108 @@
 
         const CORS_PROXY = 'https://api.allorigins.win/raw?url=';
 
+        // Feed suggestions by category
+        const FEED_SUGGESTIONS = {
+            "Tech News": [
+                { name: "Hacker News", url: "https://hnrss.org/frontpage" },
+                { name: "Ars Technica", url: "https://feeds.arstechnica.com/arstechnica/index" },
+                { name: "The Verge", url: "https://www.theverge.com/rss/index.xml" },
+                { name: "TechCrunch", url: "https://techcrunch.com/feed/" },
+                { name: "Wired", url: "https://www.wired.com/feed/rss" },
+                { name: "MIT Tech Review", url: "https://www.technologyreview.com/feed/" },
+                { name: "Engadget", url: "https://www.engadget.com/rss.xml" },
+                { name: "Gizmodo", url: "https://gizmodo.com/rss" },
+                { name: "AnandTech", url: "https://www.anandtech.com/rss/" },
+                { name: "Tom's Hardware", url: "https://www.tomshardware.com/feeds/all" },
+            ],
+            "AI & ML": [
+                { name: "Anthropic Blog", url: "https://blog.anthropic.com/rss.xml" },
+                { name: "OpenAI Blog", url: "https://openai.com/blog/rss.xml" },
+                { name: "Google AI Blog", url: "https://blog.google/technology/ai/rss/" },
+                { name: "DeepMind", url: "https://deepmind.google/blog/rss.xml" },
+                { name: "Hugging Face Blog", url: "https://huggingface.co/blog/feed.xml" },
+                { name: "ML Mastery", url: "https://machinelearningmastery.com/feed/" },
+                { name: "Towards Data Science", url: "https://towardsdatascience.com/feed" },
+                { name: "Papers With Code", url: "https://paperswithcode.com/rss" },
+            ],
+            "Programming": [
+                { name: "Simon Willison", url: "https://simonwillison.net/atom/everything/" },
+                { name: "Joel on Software", url: "https://www.joelonsoftware.com/feed/" },
+                { name: "Coding Horror", url: "https://blog.codinghorror.com/rss/" },
+                { name: "CSS-Tricks", url: "https://css-tricks.com/feed/" },
+                { name: "Smashing Magazine", url: "https://www.smashingmagazine.com/feed/" },
+                { name: "A List Apart", url: "https://alistapart.com/main/feed/" },
+                { name: "Dev.to", url: "https://dev.to/feed" },
+                { name: "Lobsters", url: "https://lobste.rs/rss" },
+                { name: "The Pragmatic Engineer", url: "https://newsletter.pragmaticengineer.com/feed" },
+                { name: "Martin Fowler", url: "https://martinfowler.com/feed.atom" },
+                { name: "Dan Abramov", url: "https://overreacted.io/rss.xml" },
+                { name: "Julia Evans", url: "https://jvns.ca/atom.xml" },
+                { name: "Daring Fireball", url: "https://daringfireball.net/feeds/main" },
+            ],
+            "Science": [
+                { name: "Nature", url: "https://www.nature.com/nature.rss" },
+                { name: "Science Daily", url: "https://www.sciencedaily.com/rss/all.xml" },
+                { name: "Quanta Magazine", url: "https://api.quantamagazine.org/feed/" },
+                { name: "New Scientist", url: "https://www.newscientist.com/feed/home/" },
+                { name: "Scientific American", url: "https://rss.sciam.com/ScientificAmerican-Global" },
+                { name: "Phys.org", url: "https://phys.org/rss-feed/" },
+                { name: "NASA", url: "https://www.nasa.gov/rss/dyn/breaking_news.rss" },
+                { name: "Space.com", url: "https://www.space.com/feeds/all" },
+            ],
+            "News": [
+                { name: "Reuters", url: "https://www.reutersagency.com/feed/" },
+                { name: "AP News", url: "https://apnews.com/index.rss" },
+                { name: "NPR", url: "https://feeds.npr.org/1001/rss.xml" },
+                { name: "BBC", url: "https://feeds.bbci.co.uk/news/rss.xml" },
+                { name: "The Guardian", url: "https://www.theguardian.com/world/rss" },
+                { name: "Al Jazeera", url: "https://www.aljazeera.com/xml/rss/all.xml" },
+                { name: "The Atlantic", url: "https://www.theatlantic.com/feed/all/" },
+                { name: "Vox", url: "https://www.vox.com/rss/index.xml" },
+            ],
+            "Business & Finance": [
+                { name: "Bloomberg", url: "https://feeds.bloomberg.com/markets/news.rss" },
+                { name: "Financial Times", url: "https://www.ft.com/rss/home" },
+                { name: "The Economist", url: "https://www.economist.com/rss" },
+                { name: "Harvard Business Review", url: "https://hbr.org/rss" },
+                { name: "Y Combinator", url: "https://www.ycombinator.com/blog/rss/" },
+                { name: "a]6z", url: "https://a16z.com/feed/" },
+                { name: "Stratechery", url: "https://stratechery.com/feed/" },
+            ],
+            "Design": [
+                { name: "Designer News", url: "https://www.designernews.co/?format=rss" },
+                { name: "UX Collective", url: "https://uxdesign.cc/feed" },
+                { name: "NN Group", url: "https://www.nngroup.com/feed/rss/" },
+                { name: "Sidebar", url: "https://sidebar.io/feed.xml" },
+                { name: "Codrops", url: "https://tympanus.net/codrops/feed/" },
+            ],
+            "Security": [
+                { name: "Krebs on Security", url: "https://krebsonsecurity.com/feed/" },
+                { name: "Schneier on Security", url: "https://www.schneier.com/feed/" },
+                { name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews" },
+                { name: "Dark Reading", url: "https://www.darkreading.com/rss.xml" },
+                { name: "Troy Hunt", url: "https://www.troyhunt.com/rss/" },
+            ],
+            "Podcasts": [
+                { name: "Lex Fridman", url: "https://lexfridman.com/feed/podcast/" },
+                { name: "Changelog", url: "https://changelog.com/podcast/feed" },
+                { name: "Software Engineering Daily", url: "https://softwareengineeringdaily.com/feed/podcast/" },
+                { name: "Syntax.fm", url: "https://feed.syntax.fm/rss" },
+                { name: "Talk Python", url: "https://talkpython.fm/episodes/rss" },
+            ],
+            "Miscellaneous": [
+                { name: "Wait But Why", url: "https://waitbutwhy.com/feed" },
+                { name: "Brain Pickings", url: "https://www.themarginalian.org/feed/" },
+                { name: "Kottke", url: "https://feeds.kottke.org/main" },
+                { name: "Austin Kleon", url: "https://austinkleon.com/feed/" },
+                { name: "Seth Godin", url: "https://seths.blog/feed/" },
+                { name: "Longform", url: "https://longform.org/feed.rss" },
+                { name: "The Browser", url: "https://thebrowser.com/feed/" },
+                { name: "Farnam Street", url: "https://fs.blog/feed/" },
+                { name: "XKCD", url: "https://xkcd.com/rss.xml" },
+            ],
+        };
+
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
             // Try to load from localStorage as backup
@@ -180,6 +373,7 @@
                     showStatus('Loaded previous session from browser storage.', 'success');
                 } catch (e) {}
             }
+            renderSuggestions();
         });
 
         function showStatus(msg, type = 'loading') {
@@ -200,6 +394,45 @@
             localStorage.setItem('rssReaderState', JSON.stringify(state));
         }
 
+        // Suggestions panel
+        function toggleSuggestions() {
+            const content = document.getElementById('suggestionsContent');
+            const toggle = document.getElementById('suggestionsToggle');
+            content.classList.toggle('open');
+            toggle.textContent = content.classList.contains('open') ? '▼ Hide' : '▶ Show';
+        }
+
+        function renderSuggestions() {
+            const container = document.getElementById('suggestionsContent');
+            container.innerHTML = Object.entries(FEED_SUGGESTIONS).map(([category, feeds]) => `
+                <div class="suggestions-category">
+                    <h3>${category}</h3>
+                    <div>
+                        ${feeds.map(feed => {
+                            const isAdded = state.feeds.some(f => f.url === feed.url);
+                            return `<span class="suggestion-item ${isAdded ? 'added' : ''}"
+                                         onclick="addSuggestion('${escapeHtml(feed.url)}', '${escapeHtml(feed.name)}')"
+                                         title="${escapeHtml(feed.url)}">
+                                ${isAdded ? '✓' : '+'} ${escapeHtml(feed.name)}
+                            </span>`;
+                        }).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addSuggestion(url, name) {
+            if (state.feeds.some(f => f.url === url)) {
+                showStatus('Feed already added!', 'error');
+                return;
+            }
+            state.feeds.push({ url, title: name });
+            renderFeeds();
+            renderSuggestions();
+            saveToLocalStorage();
+            showStatus(`Added "${name}". Click Refresh All to load.`, 'success');
+        }
+
         // Feed management
         function addFeed() {
             const input = document.getElementById('feedUrl');
@@ -214,6 +447,7 @@
             state.feeds.push({ url, title: url });
             input.value = '';
             renderFeeds();
+            renderSuggestions();
             saveToLocalStorage();
             fetchFeed(url);
         }
@@ -222,6 +456,7 @@
             state.feeds = state.feeds.filter(f => f.url !== url);
             allItems = allItems.filter(item => item.feedUrl !== url);
             renderFeeds();
+            renderSuggestions();
             renderItems();
             saveToLocalStorage();
         }
@@ -359,17 +594,25 @@
         // Rendering items
         function renderItems() {
             const container = document.getElementById('itemsContainer');
+            const showRead = document.getElementById('showReadToggle').checked;
             const unreadCount = allItems.filter(i => !i.read).length;
+            const displayItems = showRead ? allItems : allItems.filter(i => !i.read);
 
-            document.getElementById('stats').textContent =
+            document.getElementById('statsText').textContent =
                 `${allItems.length} items total, ${unreadCount} unread`;
 
-            if (allItems.length === 0) {
-                container.innerHTML = '<div class="item" style="color: #888; text-align: center;">No items. Add feeds and refresh.</div>';
+            if (displayItems.length === 0) {
+                if (allItems.length === 0) {
+                    container.innerHTML = '<div class="item" style="color: #888; text-align: center;">No items. Add feeds and refresh.</div>';
+                } else {
+                    container.innerHTML = '<div class="item" style="color: #888; text-align: center;">All caught up! No unread items.</div>';
+                }
                 return;
             }
 
-            container.innerHTML = allItems.map((item, idx) => `
+            container.innerHTML = displayItems.map((item) => {
+                const idx = allItems.indexOf(item);
+                return `
                 <div class="item ${item.read ? 'read' : ''}" data-idx="${idx}">
                     <div class="item-header">
                         <div>
@@ -386,7 +629,7 @@
                     </div>
                     ${item.description ? `<div class="item-desc">${escapeHtml(item.description)}${item.description.length >= 300 ? '...' : ''}</div>` : ''}
                 </div>
-            `).join('');
+            `}).join('');
         }
 
         function markRead(idx) {
@@ -464,6 +707,7 @@
 
                     allItems = [];
                     renderFeeds();
+                    renderSuggestions();
                     saveToLocalStorage();
                     showStatus(`Imported ${state.feeds.length} feed(s). Click "Refresh All" to load articles.`, 'success');
                 } catch (err) {
