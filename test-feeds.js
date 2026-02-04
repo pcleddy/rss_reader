@@ -2,94 +2,81 @@ const https = require('https');
 const http = require('http');
 
 const FEEDS = [
-    // Tech News
-    { name: "Hacker News", url: "https://hnrss.org/frontpage" },
-    { name: "Ars Technica", url: "https://feeds.arstechnica.com/arstechnica/index" },
-    { name: "The Verge", url: "https://www.theverge.com/rss/index.xml" },
-    { name: "TechCrunch", url: "https://techcrunch.com/feed/" },
-    { name: "Wired", url: "https://www.wired.com/feed/rss" },
-    { name: "MIT Tech Review", url: "https://www.technologyreview.com/feed/" },
-    { name: "Engadget", url: "https://www.engadget.com/rss.xml" },
-    { name: "Gizmodo", url: "https://gizmodo.com/rss" },
-    { name: "AnandTech", url: "https://www.anandtech.com/rss/" },
-    { name: "Tom's Hardware", url: "https://www.tomshardware.com/feeds/all" },
-    // AI & ML
-    { name: "Anthropic Blog", url: "https://blog.anthropic.com/rss.xml" },
-    { name: "OpenAI Blog", url: "https://openai.com/blog/rss.xml" },
-    { name: "Google AI Blog", url: "https://blog.google/technology/ai/rss/" },
-    { name: "DeepMind", url: "https://deepmind.google/blog/rss.xml" },
-    { name: "Hugging Face Blog", url: "https://huggingface.co/blog/feed.xml" },
-    { name: "ML Mastery", url: "https://machinelearningmastery.com/feed/" },
-    { name: "Towards Data Science", url: "https://towardsdatascience.com/feed" },
-    { name: "Papers With Code", url: "https://paperswithcode.com/rss" },
-    // Programming
-    { name: "Simon Willison", url: "https://simonwillison.net/atom/everything/" },
-    { name: "Joel on Software", url: "https://www.joelonsoftware.com/feed/" },
-    { name: "Coding Horror", url: "https://blog.codinghorror.com/rss/" },
-    { name: "CSS-Tricks", url: "https://css-tricks.com/feed/" },
-    { name: "Smashing Magazine", url: "https://www.smashingmagazine.com/feed/" },
-    { name: "A List Apart", url: "https://alistapart.com/main/feed/" },
-    { name: "Dev.to", url: "https://dev.to/feed" },
-    { name: "Lobsters", url: "https://lobste.rs/rss" },
-    { name: "The Pragmatic Engineer", url: "https://newsletter.pragmaticengineer.com/feed" },
-    { name: "Martin Fowler", url: "https://martinfowler.com/feed.atom" },
-    { name: "Dan Abramov", url: "https://overreacted.io/rss.xml" },
-    { name: "Julia Evans", url: "https://jvns.ca/atom.xml" },
-    { name: "Daring Fireball", url: "https://daringfireball.net/feeds/main" },
+    // Tech / Startups
+    { name: "TechMeme", url: "https://www.techmeme.com/feed.xml", category: "Tech News" },
+    { name: "The Register", url: "https://www.theregister.com/headlines.atom", category: "Tech News" },
+    { name: "Hacker Noon", url: "https://hackernoon.com/feed", category: "Tech News" },
+    { name: "Product Hunt", url: "https://www.producthunt.com/feed", category: "Tech News" },
+    { name: "InfoQ", url: "https://feed.infoq.com/", category: "Tech News" },
+
+    // AI / ML
+    { name: "MIT AI News", url: "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml", category: "AI & ML" },
+    { name: "Distill.pub", url: "https://distill.pub/rss.xml", category: "AI & ML" },
+    { name: "The Gradient", url: "https://thegradient.pub/rss/", category: "AI & ML" },
+    { name: "AI Weirdness", url: "https://www.aiweirdness.com/rss/", category: "AI & ML" },
+    { name: "Weights & Biases", url: "https://wandb.ai/fully-connected/rss.xml", category: "AI & ML" },
+
+    // Programming blogs
+    { name: "The Go Blog", url: "https://go.dev/blog/feed.atom", category: "Programming" },
+    { name: "Rust Blog", url: "https://blog.rust-lang.org/feed.xml", category: "Programming" },
+    { name: "Python Insider", url: "https://blog.python.org/feeds/posts/default", category: "Programming" },
+    { name: "Netflix Tech Blog", url: "https://netflixtechblog.com/feed", category: "Programming" },
+    { name: "Uber Engineering", url: "https://eng.uber.com/feed/", category: "Programming" },
+    { name: "Dropbox Tech", url: "https://dropbox.tech/feed", category: "Programming" },
+    { name: "GitHub Blog", url: "https://github.blog/feed/", category: "Programming" },
+    { name: "Slack Engineering", url: "https://slack.engineering/feed/", category: "Programming" },
+    { name: "Stripe Blog", url: "https://stripe.com/blog/feed.rss", category: "Programming" },
+    { name: "Discord Blog", url: "https://discord.com/blog/rss.xml", category: "Programming" },
+    { name: "Linear Blog", url: "https://linear.app/blog/rss.xml", category: "Programming" },
+    { name: "Vercel Blog", url: "https://vercel.com/atom", category: "Programming" },
+    { name: "Cloudflare Blog", url: "https://blog.cloudflare.com/rss/", category: "Programming" },
+    { name: "Fly.io Blog", url: "https://fly.io/blog/feed.xml", category: "Programming" },
+
     // Science
-    { name: "Nature", url: "https://www.nature.com/nature.rss" },
-    { name: "Science Daily", url: "https://www.sciencedaily.com/rss/all.xml" },
-    { name: "Quanta Magazine", url: "https://api.quantamagazine.org/feed/" },
-    { name: "New Scientist", url: "https://www.newscientist.com/feed/home/" },
-    { name: "Scientific American", url: "https://rss.sciam.com/ScientificAmerican-Global" },
-    { name: "Phys.org", url: "https://phys.org/rss-feed/" },
-    { name: "NASA", url: "https://www.nasa.gov/rss/dyn/breaking_news.rss" },
-    { name: "Space.com", url: "https://www.space.com/feeds/all" },
-    // News
-    { name: "Reuters", url: "https://www.reutersagency.com/feed/" },
-    { name: "AP News", url: "https://apnews.com/index.rss" },
-    { name: "NPR", url: "https://feeds.npr.org/1001/rss.xml" },
-    { name: "BBC", url: "https://feeds.bbci.co.uk/news/rss.xml" },
-    { name: "The Guardian", url: "https://www.theguardian.com/world/rss" },
-    { name: "Al Jazeera", url: "https://www.aljazeera.com/xml/rss/all.xml" },
-    { name: "The Atlantic", url: "https://www.theatlantic.com/feed/all/" },
-    { name: "Vox", url: "https://www.vox.com/rss/index.xml" },
-    // Business & Finance
-    { name: "Bloomberg", url: "https://feeds.bloomberg.com/markets/news.rss" },
-    { name: "Financial Times", url: "https://www.ft.com/rss/home" },
-    { name: "The Economist", url: "https://www.economist.com/rss" },
-    { name: "Harvard Business Review", url: "https://hbr.org/rss" },
-    { name: "Y Combinator", url: "https://www.ycombinator.com/blog/rss/" },
-    { name: "a16z", url: "https://a16z.com/feed/" },
-    { name: "Stratechery", url: "https://stratechery.com/feed/" },
+    { name: "Ars Science", url: "https://feeds.arstechnica.com/arstechnica/science", category: "Science" },
+    { name: "Live Science", url: "https://www.livescience.com/feeds/all", category: "Science" },
+    { name: "ScienceAlert", url: "https://www.sciencealert.com/feed", category: "Science" },
+    { name: "Smithsonian", url: "https://www.smithsonianmag.com/rss/science-nature/", category: "Science" },
+
+    // News / World
+    { name: "The Intercept", url: "https://theintercept.com/feed/?rss", category: "News" },
+    { name: "ProPublica", url: "https://www.propublica.org/feeds/propublica/main", category: "News" },
+    { name: "FiveThirtyEight", url: "https://fivethirtyeight.com/features/feed/", category: "News" },
+    { name: "Axios", url: "https://api.axios.com/feed/", category: "News" },
+    { name: "Rest of World", url: "https://restofworld.org/feed/", category: "News" },
+
+    // Business
+    { name: "Benedict Evans", url: "https://www.ben-evans.com/benedictevans?format=rss", category: "Business & Finance" },
+    { name: "Matt Levine (Bloomberg)", url: "https://newsletterhunt.com/feeds/matt-levine-money-stuff", category: "Business & Finance" },
+    { name: "Lenny's Newsletter", url: "https://www.lennysnewsletter.com/feed", category: "Business & Finance" },
+
     // Design
-    { name: "Designer News", url: "https://www.designernews.co/?format=rss" },
-    { name: "UX Collective", url: "https://uxdesign.cc/feed" },
-    { name: "NN Group", url: "https://www.nngroup.com/feed/rss/" },
-    { name: "Sidebar", url: "https://sidebar.io/feed.xml" },
-    { name: "Codrops", url: "https://tympanus.net/codrops/feed/" },
+    { name: "Dribbble Blog", url: "https://dribbble.com/stories.rss", category: "Design" },
+    { name: "Webdesigner Depot", url: "https://www.webdesignerdepot.com/feed/", category: "Design" },
+    { name: "It's Nice That", url: "https://www.itsnicethat.com/rss/all", category: "Design" },
+
     // Security
-    { name: "Krebs on Security", url: "https://krebsonsecurity.com/feed/" },
-    { name: "Schneier on Security", url: "https://www.schneier.com/feed/" },
-    { name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews" },
-    { name: "Dark Reading", url: "https://www.darkreading.com/rss.xml" },
-    { name: "Troy Hunt", url: "https://www.troyhunt.com/rss/" },
+    { name: "Google Project Zero", url: "https://googleprojectzero.blogspot.com/feeds/posts/default", category: "Security" },
+    { name: "SANS ISC", url: "https://isc.sans.edu/rssfeed_full.xml", category: "Security" },
+    { name: "Naked Security", url: "https://nakedsecurity.sophos.com/feed/", category: "Security" },
+    { name: "Graham Cluley", url: "https://grahamcluley.com/feed/", category: "Security" },
+
     // Podcasts
-    { name: "Lex Fridman", url: "https://lexfridman.com/feed/podcast/" },
-    { name: "Changelog", url: "https://changelog.com/podcast/feed" },
-    { name: "Software Engineering Daily", url: "https://softwareengineeringdaily.com/feed/podcast/" },
-    { name: "Syntax.fm", url: "https://feed.syntax.fm/rss" },
-    { name: "Talk Python", url: "https://talkpython.fm/episodes/rss" },
-    // Miscellaneous
-    { name: "Wait But Why", url: "https://waitbutwhy.com/feed" },
-    { name: "Brain Pickings", url: "https://www.themarginalian.org/feed/" },
-    { name: "Kottke", url: "https://feeds.kottke.org/main" },
-    { name: "Austin Kleon", url: "https://austinkleon.com/feed/" },
-    { name: "Seth Godin", url: "https://seths.blog/feed/" },
-    { name: "Longform", url: "https://longform.org/feed.rss" },
-    { name: "The Browser", url: "https://thebrowser.com/feed/" },
-    { name: "Farnam Street", url: "https://fs.blog/feed/" },
-    { name: "XKCD", url: "https://xkcd.com/rss.xml" },
+    { name: "Acquired", url: "https://acquired.libsyn.com/rss", category: "Podcasts" },
+    { name: "All-In Podcast", url: "https://feeds.megaphone.fm/all-in-with-chamath-jason-sacks-friedberg", category: "Podcasts" },
+    { name: "The Vergecast", url: "https://feeds.megaphone.fm/vergecast", category: "Podcasts" },
+    { name: "Darknet Diaries", url: "https://feeds.megaphone.fm/darknetdiaries", category: "Podcasts" },
+    { name: "CoRecursive", url: "https://corecursive.com/feed.xml", category: "Podcasts" },
+
+    // Misc / Culture
+    { name: "Aeon", url: "https://aeon.co/feed.rss", category: "Miscellaneous" },
+    { name: "Nautilus", url: "https://nautil.us/feed/", category: "Miscellaneous" },
+    { name: "The Pudding", url: "https://pudding.cool/feed/index.xml", category: "Miscellaneous" },
+    { name: "Literary Hub", url: "https://lithub.com/feed/", category: "Miscellaneous" },
+    { name: "Open Culture", url: "https://www.openculture.com/feed", category: "Miscellaneous" },
+    { name: "Boing Boing", url: "https://boingboing.net/feed", category: "Miscellaneous" },
+    { name: "The Morning News", url: "https://themorningnews.org/feed", category: "Miscellaneous" },
+    { name: "Cup of Jo", url: "https://cupofjo.com/feed", category: "Miscellaneous" },
 ];
 
 function testFeed(feed) {
@@ -101,13 +88,21 @@ function testFeed(feed) {
             timeout: 10000,
             headers: { 'User-Agent': 'RSS-Reader-Test/1.0' }
         }, (res) => {
+            // Follow redirects
+            if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+                const redirectUrl = res.headers.location.startsWith('http')
+                    ? res.headers.location
+                    : `${url.protocol}//${url.host}${res.headers.location}`;
+                testFeed({ ...feed, url: redirectUrl }).then(resolve);
+                return;
+            }
+
             let data = '';
-            res.on('data', chunk => data += chunk.slice(0, 5000)); // Just get first bit
+            res.on('data', chunk => data += chunk.slice(0, 5000));
             res.on('end', () => {
                 const isRss = data.includes('<rss') || data.includes('<feed') || data.includes('<channel');
                 const hasItems = data.includes('<item') || data.includes('<entry');
 
-                // Try to find latest date
                 let lastPost = null;
                 const dateMatch = data.match(/<pubDate>([^<]+)<\/pubDate>|<published>([^<]+)<\/published>|<updated>([^<]+)<\/updated>/);
                 if (dateMatch) {
@@ -117,6 +112,7 @@ function testFeed(feed) {
                 resolve({
                     name: feed.name,
                     url: feed.url,
+                    category: feed.category,
                     status: res.statusCode,
                     ok: res.statusCode === 200 && isRss && hasItems,
                     isRss,
@@ -128,58 +124,20 @@ function testFeed(feed) {
         });
 
         req.on('error', (e) => {
-            resolve({
-                name: feed.name,
-                url: feed.url,
-                status: 0,
-                ok: false,
-                error: e.message
-            });
+            resolve({ name: feed.name, url: feed.url, category: feed.category, status: 0, ok: false, error: e.message });
         });
 
         req.on('timeout', () => {
             req.destroy();
-            resolve({
-                name: feed.name,
-                url: feed.url,
-                status: 0,
-                ok: false,
-                error: 'timeout'
-            });
+            resolve({ name: feed.name, url: feed.url, category: feed.category, status: 0, ok: false, error: 'timeout' });
         });
     });
 }
 
 async function main() {
-    console.log(`Testing ${FEEDS.length} feeds...\n`);
-
+    console.error(`Testing ${FEEDS.length} feeds...`);
     const results = await Promise.all(FEEDS.map(testFeed));
-
-    const working = results.filter(r => r.ok);
-    const broken = results.filter(r => !r.ok);
-
-    // Check for stale (>2 years old)
-    const twoYearsAgo = new Date();
-    twoYearsAgo.setFullYear(twoYearsAgo.getFullYear() - 2);
-    const stale = working.filter(r => r.lastPost && r.lastPost < twoYearsAgo);
-
-    console.log('=== BROKEN FEEDS ===');
-    broken.forEach(r => {
-        console.log(`❌ ${r.name}: ${r.error || `HTTP ${r.status}`} ${!r.isRss ? '(not RSS)' : ''} ${!r.hasItems ? '(no items)' : ''}`);
-    });
-
-    console.log('\n=== STALE FEEDS (>2 years) ===');
-    stale.forEach(r => {
-        console.log(`⚠️  ${r.name}: last post ${r.lastPost?.toLocaleDateString()}`);
-    });
-
-    console.log('\n=== SUMMARY ===');
-    console.log(`✅ Working: ${working.length - stale.length}`);
-    console.log(`⚠️  Stale: ${stale.length}`);
-    console.log(`❌ Broken: ${broken.length}`);
-
-    console.log('\n=== FEEDS TO REMOVE ===');
-    [...broken, ...stale].forEach(r => console.log(`- ${r.name}`));
+    console.log(JSON.stringify(results, null, 2));
 }
 
 main();

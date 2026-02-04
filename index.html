@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- RSS Reader v0.5.0 -->
+<!-- RSS Reader v0.6.0 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader v0.5.0</title>
+    <title>RSS Reader v0.6.0</title>
     <style>
         :root {
             --bg-primary: #f5f5f5;
@@ -378,11 +378,19 @@
                 { name: "Wired", url: "https://www.wired.com/feed/rss" },
                 { name: "MIT Tech Review", url: "https://www.technologyreview.com/feed/" },
                 { name: "Engadget", url: "https://www.engadget.com/rss.xml" },
+                { name: "TechMeme", url: "https://www.techmeme.com/feed.xml" },
+                { name: "The Register", url: "https://www.theregister.com/headlines.atom" },
+                { name: "Hacker Noon", url: "https://hackernoon.com/feed" },
+                { name: "Product Hunt", url: "https://www.producthunt.com/feed" },
+                { name: "InfoQ", url: "https://feed.infoq.com/" },
             ],
             "AI & ML": [
                 { name: "DeepMind", url: "https://deepmind.google/blog/rss.xml" },
                 { name: "Hugging Face Blog", url: "https://huggingface.co/blog/feed.xml" },
                 { name: "ML Mastery", url: "https://machinelearningmastery.com/feed/" },
+                { name: "MIT AI News", url: "https://news.mit.edu/topic/mitartificial-intelligence2-rss.xml" },
+                { name: "The Gradient", url: "https://thegradient.pub/rss/" },
+                { name: "AI Weirdness", url: "https://www.aiweirdness.com/rss/" },
             ],
             "Programming": [
                 { name: "Simon Willison", url: "https://simonwillison.net/atom/everything/" },
@@ -397,12 +405,27 @@
                 { name: "Dan Abramov", url: "https://overreacted.io/rss.xml" },
                 { name: "Julia Evans", url: "https://jvns.ca/atom.xml" },
                 { name: "Daring Fireball", url: "https://daringfireball.net/feeds/main" },
+                { name: "The Go Blog", url: "https://go.dev/blog/feed.atom" },
+                { name: "Rust Blog", url: "https://blog.rust-lang.org/feed.xml" },
+                { name: "Python Insider", url: "https://blog.python.org/feeds/posts/default" },
+                { name: "GitHub Blog", url: "https://github.blog/feed/" },
+                { name: "Cloudflare Blog", url: "https://blog.cloudflare.com/rss/" },
+                { name: "Vercel Blog", url: "https://vercel.com/atom" },
+                { name: "Fly.io Blog", url: "https://fly.io/blog/feed.xml" },
+                { name: "Stripe Blog", url: "https://stripe.com/blog/feed.rss" },
+                { name: "Dropbox Tech", url: "https://dropbox.tech/feed" },
+                { name: "Slack Engineering", url: "https://slack.engineering/feed/" },
+                { name: "Discord Blog", url: "https://discord.com/blog/rss.xml" },
             ],
             "Science": [
                 { name: "Nature", url: "https://www.nature.com/nature.rss" },
                 { name: "Science Daily", url: "https://www.sciencedaily.com/rss/all.xml" },
                 { name: "New Scientist", url: "https://www.newscientist.com/feed/home/" },
                 { name: "Phys.org", url: "https://phys.org/rss-feed/" },
+                { name: "Ars Science", url: "https://feeds.arstechnica.com/arstechnica/science" },
+                { name: "Live Science", url: "https://www.livescience.com/feeds.xml" },
+                { name: "ScienceAlert", url: "https://www.sciencealert.com/feed" },
+                { name: "Smithsonian", url: "https://www.smithsonianmag.com/rss/science-nature/" },
             ],
             "News": [
                 { name: "NPR", url: "https://feeds.npr.org/1001/rss.xml" },
@@ -411,17 +434,25 @@
                 { name: "Al Jazeera", url: "https://www.aljazeera.com/xml/rss/all.xml" },
                 { name: "The Atlantic", url: "https://www.theatlantic.com/feed/all/" },
                 { name: "Vox", url: "https://www.vox.com/rss/index.xml" },
+                { name: "The Intercept", url: "https://theintercept.com/feed/?rss" },
+                { name: "ProPublica", url: "https://www.propublica.org/feeds/propublica/main" },
+                { name: "Axios", url: "https://api.axios.com/feed/" },
+                { name: "Rest of World", url: "https://restofworld.org/feed/latest/" },
             ],
             "Business & Finance": [
                 { name: "Bloomberg", url: "https://feeds.bloomberg.com/markets/news.rss" },
                 { name: "Y Combinator", url: "https://www.ycombinator.com/blog/rss/" },
                 { name: "Stratechery", url: "https://stratechery.com/feed/" },
+                { name: "Benedict Evans", url: "https://www.ben-evans.com/benedictevans?format=rss" },
+                { name: "Lenny's Newsletter", url: "https://www.lennysnewsletter.com/feed" },
             ],
             "Design": [
                 { name: "UX Collective", url: "https://uxdesign.cc/feed" },
                 { name: "NN Group", url: "https://www.nngroup.com/feed/rss/" },
                 { name: "Sidebar", url: "https://sidebar.io/feed.xml" },
                 { name: "Codrops", url: "https://tympanus.net/codrops/feed/" },
+                { name: "Dribbble Blog", url: "https://dribbble.com/stories.rss" },
+                { name: "Webdesigner Depot", url: "https://webdesignerdepot.com/feed/" },
             ],
             "Security": [
                 { name: "Krebs on Security", url: "https://krebsonsecurity.com/feed/" },
@@ -429,12 +460,18 @@
                 { name: "The Hacker News", url: "https://feeds.feedburner.com/TheHackersNews" },
                 { name: "Dark Reading", url: "https://www.darkreading.com/rss.xml" },
                 { name: "Troy Hunt", url: "https://www.troyhunt.com/rss/" },
+                { name: "Google Project Zero", url: "https://projectzero.google/feed.xml" },
+                { name: "SANS ISC", url: "https://isc.sans.edu/rssfeed_full.xml" },
+                { name: "Graham Cluley", url: "https://grahamcluley.com/feed/" },
             ],
             "Podcasts": [
                 { name: "Lex Fridman", url: "https://lexfridman.com/feed/podcast/" },
                 { name: "Changelog", url: "https://changelog.com/podcast/feed" },
                 { name: "Software Engineering Daily", url: "https://softwareengineeringdaily.com/feed/podcast/" },
                 { name: "Talk Python", url: "https://talkpython.fm/episodes/rss" },
+                { name: "Acquired", url: "https://feeds.transistor.fm/acquired" },
+                { name: "The Vergecast", url: "https://feeds.megaphone.fm/vergecast" },
+                { name: "Darknet Diaries", url: "https://podcast.darknetdiaries.com/" },
             ],
             "Miscellaneous": [
                 { name: "Wait But Why", url: "https://waitbutwhy.com/feed" },
@@ -445,6 +482,14 @@
                 { name: "Longform", url: "https://longform.org/feed.rss" },
                 { name: "Farnam Street", url: "https://fs.blog/feed/" },
                 { name: "XKCD", url: "https://xkcd.com/rss.xml" },
+                { name: "Aeon", url: "https://aeon.co/feed.rss" },
+                { name: "Nautilus", url: "https://nautil.us/feed/" },
+                { name: "The Pudding", url: "https://pudding.cool/rss.xml" },
+                { name: "Literary Hub", url: "https://lithub.com/feed/" },
+                { name: "Open Culture", url: "https://www.openculture.com/feed" },
+                { name: "Boing Boing", url: "https://boingboing.net/feed" },
+                { name: "The Morning News", url: "https://themorningnews.org/rss/" },
+                { name: "Cup of Jo", url: "https://cupofjo.com/feed/" },
             ],
         };
 
