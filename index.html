@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- RSS Reader v0.9.5 -->
+<!-- RSS Reader v1.0.0 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader v0.9.5</title>
+    <title>RSS Reader v1.0.0</title>
     <style>
         :root {
             --bg-primary: #f5f5f5;
@@ -315,7 +315,7 @@
 </head>
 <body>
     <div class="header-row">
-        <h1>📰 RSS Reader <span style="font-size: 11px; font-weight: normal; color: var(--text-muted); vertical-align: middle;">v0.9.5</span></h1>
+        <h1>📰 RSS Reader <span style="font-size: 11px; font-weight: normal; color: var(--text-muted); vertical-align: middle;">v1.0.0</span></h1>
         <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌓</button>
     </div>
     <p class="subtitle">Import your state file to continue where you left off, or add feeds to get started.</p>
@@ -498,7 +498,7 @@
                 { name: "The Morning News", url: "https://themorningnews.org/rss/" },
                 { name: "Cup of Jo", url: "https://cupofjo.com/feed/" },
             ],
-            "Karpathy's Picks": [
+            "Karpathy Picks": [
                 { name: "Jeff Geerling", url: "https://www.jeffgeerling.com/blog.xml" },
                 { name: "Sean Goedecke", url: "https://www.seangoedecke.com/rss.xml" },
                 { name: "Eric Migicovsky", url: "https://ericmigi.com/rss.xml" },
@@ -581,6 +581,98 @@
                 { name: "Keygen", url: "https://keygen.sh/blog/feed.xml" },
                 { name: "Matthew Garrett", url: "https://mjg59.dreamwidth.org/data/rss" },
                 { name: "Computer.rip", url: "https://computer.rip/rss.xml" },
+            ],
+            "Literature & Books": [
+                { name: "Paris Review", url: "https://www.theparisreview.org/blog/feed/" },
+                { name: "The Millions", url: "https://themillions.com/feed" },
+                { name: "Electric Literature", url: "https://electricliterature.com/feed/" },
+                { name: "Book Riot", url: "https://bookriot.com/feed/" },
+                { name: "The Marginalian", url: "https://www.themarginalian.org/feed/" },
+                { name: "Five Books", url: "https://fivebooks.com/feed/" },
+            ],
+            "Art & Museums": [
+                { name: "Hyperallergic", url: "https://hyperallergic.com/feed/" },
+                { name: "Artnet News", url: "https://news.artnet.com/feed" },
+                { name: "Colossal", url: "https://www.thisiscolossal.com/feed/" },
+                { name: "The Art Newspaper", url: "https://www.theartnewspaper.com/rss" },
+                { name: "Dezeen", url: "https://www.dezeen.com/feed/" },
+            ],
+            "Music": [
+                { name: "Pitchfork", url: "https://pitchfork.com/feed/feed-news/rss" },
+                { name: "Stereogum", url: "https://www.stereogum.com/feed/" },
+                { name: "NPR Music", url: "https://feeds.npr.org/1039/rss.xml" },
+                { name: "Resident Advisor", url: "https://ra.co/xml/news.xml" },
+                { name: "The Quietus", url: "https://thequietus.com/feed" },
+            ],
+            "Film & TV": [
+                { name: "IndieWire", url: "https://www.indiewire.com/feed/" },
+                { name: "The Playlist", url: "https://theplaylist.net/feed/" },
+                { name: "Film School Rejects", url: "https://filmschoolrejects.com/feed/" },
+                { name: "Criterion", url: "https://www.criterion.com/current/feed" },
+                { name: "Roger Ebert", url: "https://www.rogerebert.com/feed" },
+            ],
+            "Philosophy": [
+                { name: "Daily Nous", url: "https://dailynous.com/feed/" },
+                { name: "3 Quarks Daily", url: "https://3quarksdaily.com/feed" },
+                { name: "Philosophy Now", url: "https://philosophynow.org/rss" },
+                { name: "Partially Examined Life", url: "https://partiallyexaminedlife.com/feed/" },
+            ],
+            "History": [
+                { name: "History Today", url: "https://www.historytoday.com/feed/rss.xml" },
+                { name: "Smithsonian History", url: "https://www.smithsonianmag.com/rss/history/" },
+                { name: "Age of Revolutions", url: "https://ageofrevolutions.com/feed/" },
+                { name: "History Extra", url: "https://www.historyextra.com/feed/" },
+            ],
+            "Economics": [
+                { name: "Marginal Revolution", url: "https://marginalrevolution.com/feed" },
+                { name: "Planet Money", url: "https://feeds.npr.org/510289/podcast.xml" },
+                { name: "Noahpinion", url: "https://noahpinion.substack.com/feed" },
+                { name: "Matt Levine", url: "https://www.bloomberg.com/opinion/authors/ARbTQlRLRjE/matthew-s-levine.rss" },
+            ],
+            "Psychology": [
+                { name: "BPS Research Digest", url: "https://digest.bps.org.uk/feed/" },
+                { name: "Mind Hacks", url: "https://mindhacks.com/feed/" },
+                { name: "Psych Central", url: "https://psychcentral.com/feed/" },
+            ],
+            "Health & Medicine": [
+                { name: "STAT News", url: "https://www.statnews.com/feed/" },
+                { name: "NIH News", url: "https://www.nih.gov/news-events/news-releases/feed" },
+                { name: "Medical News Today", url: "https://www.medicalnewstoday.com/newsfeeds/rss/medical_news_today.xml" },
+            ],
+            "Sports": [
+                { name: "Defector", url: "https://defector.com/feed" },
+                { name: "FiveThirtyEight Sports", url: "https://fivethirtyeight.com/sports/feed/" },
+                { name: "The Ringer", url: "https://www.theringer.com/rss/index.xml" },
+            ],
+            "Food & Cooking": [
+                { name: "Serious Eats", url: "https://www.seriouseats.com/feeds/serious-eats" },
+                { name: "Eater", url: "https://www.eater.com/rss/index.xml" },
+                { name: "Food52", url: "https://food52.com/blog.rss" },
+                { name: "Smitten Kitchen", url: "https://smittenkitchen.com/feed/" },
+            ],
+            "Gaming": [
+                { name: "Kotaku", url: "https://kotaku.com/rss" },
+                { name: "Rock Paper Shotgun", url: "https://www.rockpapershotgun.com/feed" },
+                { name: "Polygon", url: "https://www.polygon.com/rss/index.xml" },
+                { name: "PC Gamer", url: "https://www.pcgamer.com/rss/" },
+            ],
+            "Comics & Humor": [
+                { name: "XKCD", url: "https://xkcd.com/rss.xml" },
+                { name: "The Onion", url: "https://www.theonion.com/rss" },
+                { name: "McSweeneys", url: "https://www.mcsweeneys.net/feed" },
+                { name: "Saturday Morning Breakfast Cereal", url: "https://www.smbc-comics.com/comic/rss" },
+            ],
+            "Environment": [
+                { name: "Grist", url: "https://grist.org/feed/" },
+                { name: "Yale E360", url: "https://e360.yale.edu/feed" },
+                { name: "Carbon Brief", url: "https://www.carbonbrief.org/feed" },
+                { name: "Inside Climate News", url: "https://insideclimatenews.org/feed" },
+            ],
+            "Space": [
+                { name: "NASA", url: "https://www.nasa.gov/rss/dyn/breaking_news.rss" },
+                { name: "Space.com", url: "https://www.space.com/feeds/all" },
+                { name: "Planetary Society", url: "https://www.planetary.org/feed" },
+                { name: "Universe Today", url: "https://www.universetoday.com/feed" },
             ],
         };
 
