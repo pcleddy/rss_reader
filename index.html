@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- RSS Reader v0.9.1 -->
+<!-- RSS Reader v0.9.3 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader v0.9.1</title>
+    <title>RSS Reader v0.9.3</title>
     <style>
         :root {
             --bg-primary: #f5f5f5;
@@ -315,7 +315,7 @@
 </head>
 <body>
     <div class="header-row">
-        <h1>📰 RSS Reader <span style="font-size: 11px; font-weight: normal; color: var(--text-muted); vertical-align: middle;">v0.9.1</span></h1>
+        <h1>📰 RSS Reader <span style="font-size: 11px; font-weight: normal; color: var(--text-muted); vertical-align: middle;">v0.9.3</span></h1>
         <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌓</button>
     </div>
     <p class="subtitle">Import your state file to continue where you left off, or add feeds to get started.</p>
@@ -327,6 +327,7 @@
         <button onclick="document.getElementById('importFile').click()">📥 Import State</button>
         <button onclick="exportState()">📤 Export State</button>
         <button onclick="markAllRead()">✓ Mark All Read</button>
+        <button onclick="clearStorage()">🗑️ Clear All</button>
         <input type="file" id="importFile" accept=".json" onchange="importState(event)">
     </div>
 
@@ -672,7 +673,7 @@
                 }
 
                 const text = await response.text();
-                fetchStats.push({ feed: feedName, ok: true, ms: fetchTime });
+                fetchStats.push({ feed: feedName, ok: true, ms: fetchTime, proxy: 'HF' });
                 return parseFeedText(text, url, feedName);
             } catch (e) {
                 clearTimeout(timeout);
@@ -960,6 +961,17 @@
             saveToLocalStorage();
             renderItems();
             showStatus('All items marked as read.', 'success');
+        }
+
+        function clearStorage() {
+            if (confirm('Clear all feeds and subscriptions? This cannot be undone!')) {
+                localStorage.removeItem('rssReaderState');
+                state = { feeds: [], readItems: [], lastUpdated: null };
+                allItems = [];
+                renderFeeds();
+                renderItems();
+                showStatus('All data cleared. Fresh start!', 'success');
+            }
         }
 
         // Import/Export
