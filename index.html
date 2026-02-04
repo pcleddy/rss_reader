@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- RSS Reader v0.1.0 -->
+<!-- RSS Reader v0.2.0 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSS Reader v0.1.0</title>
+    <title>RSS Reader v0.2.0</title>
     <style>
         * { box-sizing: border-box; }
         body {
@@ -557,20 +557,16 @@
                 return;
             }
 
-            showStatus(`Fetching ${state.feeds.length} feed(s)...`);
+            showStatus(`Fetching ${state.feeds.length} feed(s) in parallel...`);
             allItems = [];
 
-            let success = 0;
-            let failed = 0;
+            // Fetch all feeds in parallel
+            const results = await Promise.allSettled(
+                state.feeds.map(feed => fetchFeed(feed.url))
+            );
 
-            for (const feed of state.feeds) {
-                try {
-                    await fetchFeed(feed.url);
-                    success++;
-                } catch (e) {
-                    failed++;
-                }
-            }
+            const success = results.filter(r => r.status === 'fulfilled').length;
+            const failed = results.filter(r => r.status === 'rejected').length;
 
             state.lastUpdated = new Date().toISOString();
             saveToLocalStorage();
